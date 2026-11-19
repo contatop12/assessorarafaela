@@ -23,16 +23,21 @@ Site de [assessorarafaela.com.br](https://assessorarafaela.com.br) reconstruído
 
 ## Deploy pelo GitHub (Cloudflare Workers Builds)
 
-1. No painel da Cloudflare: **Workers & Pages → Create → Import a repository** e escolha este repositório.
+O Worker `assessorarafaela` já existe na conta Cloudflare da P12: o primeiro deploy foi manual (`npm run deploy`) e o segredo do formulário já está gravado. Falta só ligar este repositório a ele.
+
+1. No painel da Cloudflare: **Workers & Pages → `assessorarafaela` → Settings → Builds → Connect** e escolha este repositório.
+   > Não use *Create → Import a repository*: isso criaria um segundo Worker. O nome do Worker no painel precisa ser igual ao `name` do `wrangler.jsonc` (`assessorarafaela`), senão o build falha.
 2. Configure o build:
    - **Build command:** `npm run build`
    - **Deploy command:** `npx wrangler deploy`
    - **Branch de produção:** `main`
-3. Cada push na `main` publica o site. Outras branches ganham URL de preview (`*.workers.dev`, já com `noindex`).
+3. Cada push na `main` publica o site. Com os builds de outras branches ativados, cada branch ganha um Preview (URL `*.workers.dev`, já com `noindex`).
 4. **Domínio:** em *Settings → Domains & Routes*, adicione `assessorarafaela.com.br` e `www.assessorarafaela.com.br` como *Custom Domains* (ou descomente o bloco `routes` no `wrangler.jsonc`). A zona precisa estar na mesma conta Cloudflare.
 5. **www → domínio raiz:** crie uma *Redirect Rule* (Rules → Redirect Rules): `www.assessorarafaela.com.br/*` → `https://assessorarafaela.com.br/$1`, 301.
-6. **Leads do formulário** (ver abaixo): `npx wrangler secret put LEAD_WEBHOOK_URL`.
+6. **Leads do formulário** (ver abaixo): o segredo `LEAD_WEBHOOK_URL` fica guardado na Cloudflare e é mantido a cada deploy. Para trocar o destino, rode `npx wrangler secret put LEAD_WEBHOOK_URL` de novo.
 7. Opcional, no painel da zona: ative **Early Hints** (Speed → Optimization) — o site já envia os cabeçalhos `Link` das fontes.
+
+**Em outra conta Cloudflare (sem o Worker criado):** rode `npm run deploy` uma vez, grave o segredo e siga os passos acima.
 
 ## Formulário de contato
 
@@ -55,6 +60,10 @@ Payload enviado ao webhook:
 ```
 
 **Sem webhook configurado nenhum lead é perdido:** o site mostra "Falta só um passo" e leva o visitante ao WhatsApp com todos os dados já preenchidos na mensagem. O mesmo acontece se o webhook estiver fora do ar.
+
+O Worker espera até 8 segundos pela resposta do webhook. No n8n, deixe o nó Webhook respondendo imediatamente (*Respond: Immediately*), para um fluxo demorado não cair no aviso do WhatsApp.
+
+> **Este repositório é público.** A URL do webhook fica só no segredo da Cloudflare e no `.dev.vars` local (ignorado pelo Git) — nunca em arquivo versionado.
 
 Para testar localmente, copie `.dev.vars.example` para `.dev.vars`.
 
@@ -80,7 +89,7 @@ Para testar localmente, copie `.dev.vars.example` para `.dev.vars`.
 
 ## Estrutura
 
-```
+```text
 src/
   site.config.ts      dados de negócio e integrações
   content.ts          conteúdo estruturado da home
