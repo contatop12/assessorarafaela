@@ -1,0 +1,4 @@
+# Copie para .dev.vars para testar o formulário localmente (`npm run dev`).
+# Em produção use: npx wrangler secret put LEAD_WEBHOOK_URL
+LEAD_WEBHOOK_URL=https://exemplo.com/webhook/leads
+# LEAD_WEBHOOK_TOKEN=token-opcional

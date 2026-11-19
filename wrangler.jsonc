@@ -1,0 +1,39 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "assessorarafaela",
+  "main": "src/worker/index.ts",
+  "compatibility_date": "2026-11-18",
+  "compatibility_flags": ["nodejs_compat"],
+
+  // Site estático gerado por `npm run build` em dist/.
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    // /post/index.html responde em /post/ (mesmas URLs do WordPress antigo).
+    "html_handling": "auto-trailing-slash",
+    // Rotas inexistentes devolvem dist/404.html com status 404.
+    "not_found_handling": "404-page",
+    // O Worker só é invocado para a API; todo o resto é servido direto dos assets (grátis e mais rápido).
+    "run_worker_first": ["/api/*"]
+  },
+
+  "observability": {
+    "enabled": true,
+    "logs": { "enabled": true, "head_sampling_rate": 1 },
+    "traces": { "enabled": true, "head_sampling_rate": 0.1 }
+  },
+
+  "workers_dev": true,
+  "preview_urls": true
+
+  // Domínio de produção: descomente depois que a zona assessorarafaela.com.br estiver na conta
+  // Cloudflare (ou adicione em Workers & Pages → assessorarafaela → Settings → Domains & Routes).
+  // "routes": [
+  //   { "pattern": "assessorarafaela.com.br", "custom_domain": true },
+  //   { "pattern": "www.assessorarafaela.com.br", "custom_domain": true }
+  // ]
+
+  // Segredos (não vão no repositório):
+  //   npx wrangler secret put LEAD_WEBHOOK_URL     → webhook que recebe os leads do formulário
+  //   npx wrangler secret put LEAD_WEBHOOK_TOKEN   → opcional, enviado como Bearer token
+}
