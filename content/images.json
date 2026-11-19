@@ -1,0 +1,3733 @@
+{
+ "2023-11-1": {
+  "base": "/img/blog/2023-11-1",
+  "width": 1600,
+  "height": 900,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2023-11-2": {
+  "base": "/img/blog/2023-11-2",
+  "width": 1600,
+  "height": 900,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2023-11-3": {
+  "base": "/img/blog/2023-11-3",
+  "width": 1600,
+  "height": 900,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2023-11-4": {
+  "base": "/img/blog/2023-11-4",
+  "width": 1600,
+  "height": 900,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2023-11-5": {
+  "base": "/img/blog/2023-11-5",
+  "width": 1600,
+  "height": 900,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2023-11-6": {
+  "base": "/img/blog/2023-11-6",
+  "width": 1600,
+  "height": 900,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2023-11-7": {
+  "base": "/img/blog/2023-11-7",
+  "width": 1600,
+  "height": 900,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2024-01-1": {
+  "base": "/img/blog/2024-01-1",
+  "width": 1600,
+  "height": 900,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2024-01-2": {
+  "base": "/img/blog/2024-01-2",
+  "width": 1600,
+  "height": 900,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2024-01-3": {
+  "base": "/img/blog/2024-01-3",
+  "width": 1600,
+  "height": 900,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2024-01-4": {
+  "base": "/img/blog/2024-01-4",
+  "width": 1600,
+  "height": 900,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2024-02-94de94-f54cbadb68d743ecbe53646a18182434mv2": {
+  "base": "/img/blog/2024-02-94de94-f54cbadb68d743ecbe53646a18182434mv2",
+  "width": 720,
+  "height": 480,
+  "avif": [
+   480,
+   720
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    720
+   ]
+  }
+ },
+ "2024-02-fundos-imobiliarios": {
+  "base": "/img/blog/2024-02-fundos-imobiliarios",
+  "width": 1280,
+  "height": 720,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2024-02-imovel-1200x800-1": {
+  "base": "/img/blog/2024-02-imovel-1200x800-1",
+  "width": 1200,
+  "height": 800,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2024-02-rafa": {
+  "base": "/img/blog/2024-02-rafa",
+  "width": 901,
+  "height": 595,
+  "avif": [
+   480,
+   800,
+   901
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    901
+   ]
+  }
+ },
+ "2024-03-68b7c570-e10c-4fc3-91c3-1d49d9174dc7-3": {
+  "base": "/img/blog/2024-03-68b7c570-e10c-4fc3-91c3-1d49d9174dc7-3",
+  "width": 1280,
+  "height": 720,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2024-03-como-criar-uma-carteira-que-rende-2-500-de-renda-passiva-por-mes": {
+  "base": "/img/blog/2024-03-como-criar-uma-carteira-que-rende-2-500-de-renda-passiva-por-mes",
+  "width": 1024,
+  "height": 683,
+  "avif": [
+   480,
+   800,
+   1024
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1024
+   ]
+  }
+ },
+ "2024-03-fiis-que-pagam-mais-de-1-ao-mes-vale-a-pena-investir": {
+  "base": "/img/blog/2024-03-fiis-que-pagam-mais-de-1-ao-mes-vale-a-pena-investir",
+  "width": 1920,
+  "height": 1080,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2024-03-investir-em-fundos-imobiliarios-1": {
+  "base": "/img/blog/2024-03-investir-em-fundos-imobiliarios-1",
+  "width": 722,
+  "height": 509,
+  "avif": [
+   480,
+   722
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    722
+   ]
+  }
+ },
+ "2024-03-quais-sao-as-diferencas-dos-reit-s-para-os-fundos-imobiliarios": {
+  "base": "/img/blog/2024-03-quais-sao-as-diferencas-dos-reit-s-para-os-fundos-imobiliarios",
+  "width": 580,
+  "height": 355,
+  "avif": [
+   480,
+   580
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    580
+   ]
+  }
+ },
+ "2024-03-rafa-1": {
+  "base": "/img/blog/2024-03-rafa-1",
+  "width": 1278,
+  "height": 681,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2024-03-rafa-3": {
+  "base": "/img/blog/2024-03-rafa-3",
+  "width": 1000,
+  "height": 667,
+  "avif": [
+   480,
+   800,
+   1000
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1000
+   ]
+  }
+ },
+ "2024-03-tributacao-de-fiis-como-funciona-o-imposto-de-renda-em-fundos-imobilia": {
+  "base": "/img/blog/2024-03-tributacao-de-fiis-como-funciona-o-imposto-de-renda-em-fundos-imobilia",
+  "width": 1099,
+  "height": 659,
+  "avif": [
+   480,
+   800,
+   1099
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1099
+   ]
+  }
+ },
+ "2024-05-1615818295414": {
+  "base": "/img/blog/2024-05-1615818295414",
+  "width": 920,
+  "height": 455,
+  "avif": [
+   480,
+   800,
+   920
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    920
+   ]
+  }
+ },
+ "2024-05-globalizacao": {
+  "base": "/img/blog/2024-05-globalizacao",
+  "width": 950,
+  "height": 500,
+  "avif": [
+   480,
+   800,
+   950
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    950
+   ]
+  }
+ },
+ "2024-05-shutterstock-1303757536-770x478-1": {
+  "base": "/img/blog/2024-05-shutterstock-1303757536-770x478-1",
+  "width": 770,
+  "height": 478,
+  "avif": [
+   480,
+   770
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    770
+   ]
+  }
+ },
+ "2024-05-upload-1fbef1b7c1fba4d705f06e3599c8dac8": {
+  "base": "/img/blog/2024-05-upload-1fbef1b7c1fba4d705f06e3599c8dac8",
+  "width": 448,
+  "height": 336,
+  "avif": [
+   448
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    448
+   ]
+  }
+ },
+ "2024-06-dividendos-dos-fiis12-easy-resize-com": {
+  "base": "/img/blog/2024-06-dividendos-dos-fiis12-easy-resize-com",
+  "width": 1280,
+  "height": 707,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2024-06-indices-fiis": {
+  "base": "/img/blog/2024-06-indices-fiis",
+  "width": 800,
+  "height": 450,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2024-06-tabela-igp-m": {
+  "base": "/img/blog/2024-06-tabela-igp-m",
+  "width": 700,
+  "height": 440,
+  "avif": [
+   480,
+   700
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    700
+   ]
+  }
+ },
+ "2024-06-tributacao-de-fiis-5-easy-resize-com": {
+  "base": "/img/blog/2024-06-tributacao-de-fiis-5-easy-resize-com",
+  "width": 1280,
+  "height": 630,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2024-08-balance-scale-10-scaled": {
+  "base": "/img/blog/2024-08-balance-scale-10-scaled",
+  "width": 2560,
+  "height": 1953,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2024-08-closeup-manager-present-graph-business-plan-glass-wall-tracery-scaled": {
+  "base": "/img/blog/2024-08-closeup-manager-present-graph-business-plan-glass-wall-tracery-scaled",
+  "width": 2560,
+  "height": 1440,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2024-08-cryptocurrency-businessman-virtual-headset-scaled": {
+  "base": "/img/blog/2024-08-cryptocurrency-businessman-virtual-headset-scaled",
+  "width": 2560,
+  "height": 1668,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2024-08-earth-globe-with-diagram-charts-keyboard-laptop-3d-rendering-scaled": {
+  "base": "/img/blog/2024-08-earth-globe-with-diagram-charts-keyboard-laptop-3d-rendering-scaled",
+  "width": 2560,
+  "height": 1696,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2024-08-multi-exposure-forex-chart-drawings-cityscape-background-concept-succe": {
+  "base": "/img/blog/2024-08-multi-exposure-forex-chart-drawings-cityscape-background-concept-succe",
+  "width": 2560,
+  "height": 1707,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2024-08-quotvisuals-representing-financial-success-growthquot-scaled": {
+  "base": "/img/blog/2024-08-quotvisuals-representing-financial-success-growthquot-scaled",
+  "width": 2560,
+  "height": 2560,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2024-08-robot-with-graph-background-scaled": {
+  "base": "/img/blog/2024-08-robot-with-graph-background-scaled",
+  "width": 2560,
+  "height": 1463,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2024-08-top-view-cohesive-group-business-people-holding-eco-icon-jigsaw-puzzle": {
+  "base": "/img/blog/2024-08-top-view-cohesive-group-business-people-holding-eco-icon-jigsaw-puzzle",
+  "width": 2560,
+  "height": 1708,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2024-09-a-importancia-da-diversificacao-de-investimentos-em-fii": {
+  "base": "/img/blog/2024-09-a-importancia-da-diversificacao-de-investimentos-em-fii",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2024-09-analise-de-riscos-ao-investir-em-fiis": {
+  "base": "/img/blog/2024-09-analise-de-riscos-ao-investir-em-fiis",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2024-09-avaliacao-de-performance-de-fundos-imobiliarios": {
+  "base": "/img/blog/2024-09-avaliacao-de-performance-de-fundos-imobiliarios",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2024-09-avaliando-risco-e-retorno-em-fundos-de-investimento-imobiliario": {
+  "base": "/img/blog/2024-09-avaliando-risco-e-retorno-em-fundos-de-investimento-imobiliario",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2024-09-como-avaliar-o-desempenho-de-um-fii-com-estrategias-de-investimento": {
+  "base": "/img/blog/2024-09-como-avaliar-o-desempenho-de-um-fii-com-estrategias-de-investimento",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2024-09-como-minimizar-riscos-ao-investir-em-fiis": {
+  "base": "/img/blog/2024-09-como-minimizar-riscos-ao-investir-em-fiis",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2024-09-entendendo-os-fundamentos-da-analise-de-mercado": {
+  "base": "/img/blog/2024-09-entendendo-os-fundamentos-da-analise-de-mercado",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2024-09-entendendo-os-fundos-de-investimento-imobiliario": {
+  "base": "/img/blog/2024-09-entendendo-os-fundos-de-investimento-imobiliario",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2024-09-estrategias-de-investimento-para-maximizar-retornos": {
+  "base": "/img/blog/2024-09-estrategias-de-investimento-para-maximizar-retornos",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2024-11-a-importancia-da-analise-de-setores-nos-fiis": {
+  "base": "/img/blog/2024-11-a-importancia-da-analise-de-setores-nos-fiis",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2024-11-analise-de-fiis-como-fazer-uma-escolha-inteligente": {
+  "base": "/img/blog/2024-11-analise-de-fiis-como-fazer-uma-escolha-inteligente",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2024-11-analise-de-fiis-hibridos-antes-de-investir": {
+  "base": "/img/blog/2024-11-analise-de-fiis-hibridos-antes-de-investir",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2024-11-analise-de-setores-nos-fiis-em-alta": {
+  "base": "/img/blog/2024-11-analise-de-setores-nos-fiis-em-alta",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2024-11-como-a-selic-afeta-o-rendimento-dos-fiis": {
+  "base": "/img/blog/2024-11-como-a-selic-afeta-o-rendimento-dos-fiis",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2024-11-comparacao-entre-fiis-de-papel-e-rentabilidade": {
+  "base": "/img/blog/2024-11-comparacao-entre-fiis-de-papel-e-rentabilidade",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2024-11-diversificacao-com-fiis-de-papel-uma-estrategia-inteligente": {
+  "base": "/img/blog/2024-11-diversificacao-com-fiis-de-papel-uma-estrategia-inteligente",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2024-11-estrategias-de-investimento-em-fiis-hibridos": {
+  "base": "/img/blog/2024-11-estrategias-de-investimento-em-fiis-hibridos",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2024-11-estruturacao-e-gestao-de-fiis-explicada-facil": {
+  "base": "/img/blog/2024-11-estruturacao-e-gestao-de-fiis-explicada-facil",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2024-11-fiis-hibridos-para-diversificacao-de-ativos": {
+  "base": "/img/blog/2024-11-fiis-hibridos-para-diversificacao-de-ativos",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2024-11-impacto-das-taxas-de-juros-nos-fiis-agora": {
+  "base": "/img/blog/2024-11-impacto-das-taxas-de-juros-nos-fiis-agora",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2024-11-influencia-das-taxas-de-juros-no-mercado-imobiliario": {
+  "base": "/img/blog/2024-11-influencia-das-taxas-de-juros-no-mercado-imobiliario",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2024-11-o-cenario-economico-e-o-impacto-das-taxas-de-juros-nos-fiis": {
+  "base": "/img/blog/2024-11-o-cenario-economico-e-o-impacto-das-taxas-de-juros-nos-fiis",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2024-11-o-que-sao-fiis-de-papel-e-como-funcionam": {
+  "base": "/img/blog/2024-11-o-que-sao-fiis-de-papel-e-como-funcionam",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2024-11-o-que-sao-fiis-e-como-funcionam": {
+  "base": "/img/blog/2024-11-o-que-sao-fiis-e-como-funcionam",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2024-11-o-que-sao-fiis-hibridos-e-como-funcionam": {
+  "base": "/img/blog/2024-11-o-que-sao-fiis-hibridos-e-como-funcionam",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2024-11-rentabilidade-dos-fiis-de-papel-o-que-voce-precisa-saber": {
+  "base": "/img/blog/2024-11-rentabilidade-dos-fiis-de-papel-o-que-voce-precisa-saber",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2024-11-shoppings-o-retorno-dos-fiis-em-centros-comerciais": {
+  "base": "/img/blog/2024-11-shoppings-o-retorno-dos-fiis-em-centros-comerciais",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2024-11-tipos-de-fiis-e-suas-caracteristicas": {
+  "base": "/img/blog/2024-11-tipos-de-fiis-e-suas-caracteristicas",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2024-11-varejo-o-impacto-dos-fiis-no-comercio": {
+  "base": "/img/blog/2024-11-varejo-o-impacto-dos-fiis-no-comercio",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-a-importancia-do-planejamento-financeiro-para-a-aposentadoria": {
+  "base": "/img/blog/2025-07-a-importancia-do-planejamento-financeiro-para-a-aposentadoria",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-analise-dos-fundos-de-investimento-de-baixo-risco": {
+  "base": "/img/blog/2025-07-analise-dos-fundos-de-investimento-de-baixo-risco",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-07-beneficios-de-usar-fundos-de-investimento-com-liquidez-diaria": {
+  "base": "/img/blog/2025-07-beneficios-de-usar-fundos-de-investimento-com-liquidez-diaria",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-como-escolher-fundos-de-investimento-facilmente": {
+  "base": "/img/blog/2025-07-como-escolher-fundos-de-investimento-facilmente",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-07-como-escolher-o-fundo-de-investimento-certo-para-voce": {
+  "base": "/img/blog/2025-07-como-escolher-o-fundo-de-investimento-certo-para-voce",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-comparacao-de-fundos-de-investimento": {
+  "base": "/img/blog/2025-07-comparacao-de-fundos-de-investimento",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-comparacao-de-fundos-de-investimento-e-renda-variavel": {
+  "base": "/img/blog/2025-07-comparacao-de-fundos-de-investimento-e-renda-variavel",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-07-comparacao-de-fundos-de-investimento-multimercados": {
+  "base": "/img/blog/2025-07-comparacao-de-fundos-de-investimento-multimercados",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-dicas-para-iniciantes-ao-investir-em-fundos-de-investimento": {
+  "base": "/img/blog/2025-07-dicas-para-iniciantes-ao-investir-em-fundos-de-investimento",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-diferenca-entre-fundos-de-investimento-e-etfs": {
+  "base": "/img/blog/2025-07-diferenca-entre-fundos-de-investimento-e-etfs",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-07-diversificacao-de-portfolio-com-fundos-de-acoes": {
+  "base": "/img/blog/2025-07-diversificacao-de-portfolio-com-fundos-de-acoes",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-entendendo-o-cdi-e-sua-importancia": {
+  "base": "/img/blog/2025-07-entendendo-o-cdi-e-sua-importancia",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-entendendo-os-fundos-de-investimento": {
+  "base": "/img/blog/2025-07-entendendo-os-fundos-de-investimento",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-estrategias-de-investimento-em-acoes-para-2023": {
+  "base": "/img/blog/2025-07-estrategias-de-investimento-em-acoes-para-2023",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-estrategias-de-investimento-em-fundos-de-acoes": {
+  "base": "/img/blog/2025-07-estrategias-de-investimento-em-fundos-de-acoes",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-07-estrategias-de-investimento-em-fundos-de-longo-prazo": {
+  "base": "/img/blog/2025-07-estrategias-de-investimento-em-fundos-de-longo-prazo",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-estrategias-de-investimento-para-2023": {
+  "base": "/img/blog/2025-07-estrategias-de-investimento-para-2023",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-estrategias-para-maximizar-o-rendimento": {
+  "base": "/img/blog/2025-07-estrategias-para-maximizar-o-rendimento",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-fundos-de-investimento-com-baixa-taxa-em": {
+  "base": "/img/blog/2025-07-fundos-de-investimento-com-baixa-taxa-em",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-07-fundos-de-investimento-com-liquidez-diaria-para-emergencias": {
+  "base": "/img/blog/2025-07-fundos-de-investimento-com-liquidez-diaria-para-emergencias",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-07-fundos-de-investimento-em-acoes-para": {
+  "base": "/img/blog/2025-07-fundos-de-investimento-em-acoes-para",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-07-fundos-de-investimento-em-multimercados-seguros": {
+  "base": "/img/blog/2025-07-fundos-de-investimento-em-multimercados-seguros",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-07-fundos-de-investimento-em-tecnologia-prometedor": {
+  "base": "/img/blog/2025-07-fundos-de-investimento-em-tecnologia-prometedor",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-07-fundos-de-investimento-para-iniciantes-na-bolsa": {
+  "base": "/img/blog/2025-07-fundos-de-investimento-para-iniciantes-na-bolsa",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-07-gestao-de-risco-em-investimentos-em-fundos-de-acoes": {
+  "base": "/img/blog/2025-07-gestao-de-risco-em-investimentos-em-fundos-de-acoes",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-investimento-a-longo-prazo-com-fundos": {
+  "base": "/img/blog/2025-07-investimento-a-longo-prazo-com-fundos",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-isencao-de-imposto-de-renda-um-beneficio-dos-fundos-de-investimento": {
+  "base": "/img/blog/2025-07-isencao-de-imposto-de-renda-um-beneficio-dos-fundos-de-investimento",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-liquidez-dos-investimentos-flexibilidade-com-fundos-de-investimento": {
+  "base": "/img/blog/2025-07-liquidez-dos-investimentos-flexibilidade-com-fundos-de-investimento",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-liquidez-qual-e-a-diferenca": {
+  "base": "/img/blog/2025-07-liquidez-qual-e-a-diferenca",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-melhores-fundos-de-investimento-em-tecnologia-para-2023": {
+  "base": "/img/blog/2025-07-melhores-fundos-de-investimento-em-tecnologia-para-2023",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-melhores-fundos-de-investimento-para-aposentadoria-segura": {
+  "base": "/img/blog/2025-07-melhores-fundos-de-investimento-para-aposentadoria-segura",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-07-o-papel-dos-gestores-nos-fundos-de-investimento": {
+  "base": "/img/blog/2025-07-o-papel-dos-gestores-nos-fundos-de-investimento",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-o-que-sao-fundos-de-acoes-e-como-funcionam": {
+  "base": "/img/blog/2025-07-o-que-sao-fundos-de-acoes-e-como-funcionam",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-o-que-sao-fundos-de-investimento-com-liquidez-diaria": {
+  "base": "/img/blog/2025-07-o-que-sao-fundos-de-investimento-com-liquidez-diaria",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-o-que-sao-fundos-de-investimento-de-baixo-risco": {
+  "base": "/img/blog/2025-07-o-que-sao-fundos-de-investimento-de-baixo-risco",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-o-que-sao-fundos-de-investimento-e-como-funcionam": {
+  "base": "/img/blog/2025-07-o-que-sao-fundos-de-investimento-e-como-funcionam",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-o-que-sao-fundos-de-investimento-e-como-funcionam-1": {
+  "base": "/img/blog/2025-07-o-que-sao-fundos-de-investimento-e-como-funcionam-1",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-o-que-sao-fundos-de-investimento-e-como-funcionam-2": {
+  "base": "/img/blog/2025-07-o-que-sao-fundos-de-investimento-e-como-funcionam-2",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-o-que-sao-fundos-de-investimento-e-etfs": {
+  "base": "/img/blog/2025-07-o-que-sao-fundos-de-investimento-e-etfs",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-o-que-sao-fundos-de-investimento-em-acoes": {
+  "base": "/img/blog/2025-07-o-que-sao-fundos-de-investimento-em-acoes",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-o-que-sao-fundos-de-investimento-em-multimercados-para-investidores-co": {
+  "base": "/img/blog/2025-07-o-que-sao-fundos-de-investimento-em-multimercados-para-investidores-co",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-o-que-sao-fundos-de-investimento-em-tecnologia": {
+  "base": "/img/blog/2025-07-o-que-sao-fundos-de-investimento-em-tecnologia",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-perfil-de-investidor-conservador-e-suas-escolhas": {
+  "base": "/img/blog/2025-07-perfil-de-investidor-conservador-e-suas-escolhas",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-perfil-de-risco-e-fundos-de-acoes": {
+  "base": "/img/blog/2025-07-perfil-de-risco-e-fundos-de-acoes",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-previdencia-privada-versus-fundos-de-investimento": {
+  "base": "/img/blog/2025-07-previdencia-privada-versus-fundos-de-investimento",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-rendimento-de-fundos-de-investimento-e-cdi": {
+  "base": "/img/blog/2025-07-rendimento-de-fundos-de-investimento-e-cdi",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-07-rendimento-superior-a-chave-das-vantagens-dos-fundos-de-investimento-e": {
+  "base": "/img/blog/2025-07-rendimento-superior-a-chave-das-vantagens-dos-fundos-de-investimento-e",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-rentabilidade-dos-fundos-de-investimento-em-2023": {
+  "base": "/img/blog/2025-07-rentabilidade-dos-fundos-de-investimento-em-2023",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-rentabilidade-em-fundos-de-investimento-em-multimercados": {
+  "base": "/img/blog/2025-07-rentabilidade-em-fundos-de-investimento-em-multimercados",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-risco-de-investimento-em-fundos-e-renda-variavel": {
+  "base": "/img/blog/2025-07-risco-de-investimento-em-fundos-e-renda-variavel",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-seguranca-financeira-e-fundos-de-investimento": {
+  "base": "/img/blog/2025-07-seguranca-financeira-e-fundos-de-investimento",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-taxa-cdi-e-sua-relevancia": {
+  "base": "/img/blog/2025-07-taxa-cdi-e-sua-relevancia",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-tecnologia-e-inovacao-o-futuro-dos-investimentos": {
+  "base": "/img/blog/2025-07-tecnologia-e-inovacao-o-futuro-dos-investimentos",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-vantagens-dos-fundos-de-investimento-com-baixa-taxa-de-administracao-e": {
+  "base": "/img/blog/2025-07-vantagens-dos-fundos-de-investimento-com-baixa-taxa-de-administracao-e",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-07-vantagens-dos-fundos-de-investimento-em-poupanca": {
+  "base": "/img/blog/2025-07-vantagens-dos-fundos-de-investimento-em-poupanca",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-07-vantagens-e-desvantagens-de-cada-opcao": {
+  "base": "/img/blog/2025-07-vantagens-e-desvantagens-de-cada-opcao",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-a-relacao-entre-inflacao-e-rentabilidade-dos-fundos": {
+  "base": "/img/blog/2025-08-a-relacao-entre-inflacao-e-rentabilidade-dos-fundos",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-analise-de-mercado-para-fundos-de-investimento": {
+  "base": "/img/blog/2025-08-analise-de-mercado-para-fundos-de-investimento",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-analise-de-plataformas-financeiras": {
+  "base": "/img/blog/2025-08-analise-de-plataformas-financeiras",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-analise-de-risco-e-retorno-em-fundos-de-credito-privado": {
+  "base": "/img/blog/2025-08-analise-de-risco-e-retorno-em-fundos-de-credito-privado",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-analise-de-risco-financeiro-em-fundos-de-renda-fixa": {
+  "base": "/img/blog/2025-08-analise-de-risco-financeiro-em-fundos-de-renda-fixa",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-avaliacao-de-desempenho-de-fundos-de-investimento-em": {
+  "base": "/img/blog/2025-08-avaliacao-de-desempenho-de-fundos-de-investimento-em",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-08-avaliacao-de-fundos-de-investimento-imobiliario": {
+  "base": "/img/blog/2025-08-avaliacao-de-fundos-de-investimento-imobiliario",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-beneficios-dos-fundos-de-investimento-com-performance-superior": {
+  "base": "/img/blog/2025-08-beneficios-dos-fundos-de-investimento-com-performance-superior",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-como-escolher-fundos-de-investimento-em-acoes-de-tecnologia-seguros": {
+  "base": "/img/blog/2025-08-como-escolher-fundos-de-investimento-em-acoes-de-tecnologia-seguros",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-como-escolher-o-fundo-certo-para-voce": {
+  "base": "/img/blog/2025-08-como-escolher-o-fundo-certo-para-voce",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-como-escolher-o-fundo-certo-para-voce-1": {
+  "base": "/img/blog/2025-08-como-escolher-o-fundo-certo-para-voce-1",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-como-escolher-o-fundo-certo-para-voce-2": {
+  "base": "/img/blog/2025-08-como-escolher-o-fundo-certo-para-voce-2",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-como-escolher-o-fundo-de-investimento-certo-para-voce": {
+  "base": "/img/blog/2025-08-como-escolher-o-fundo-de-investimento-certo-para-voce",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-como-escolher-os-melhores-fundos-imobiliarios": {
+  "base": "/img/blog/2025-08-como-escolher-os-melhores-fundos-imobiliarios",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-como-investir-em-fundos-imobiliarios-rentaveis": {
+  "base": "/img/blog/2025-08-como-investir-em-fundos-imobiliarios-rentaveis",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-08-comparacao-de-fundos-de-investimento-de-indexados-e-ativos": {
+  "base": "/img/blog/2025-08-comparacao-de-fundos-de-investimento-de-indexados-e-ativos",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-comparando-fundos-de-investimento-e-poupanca": {
+  "base": "/img/blog/2025-08-comparando-fundos-de-investimento-e-poupanca",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-comparando-fundos-de-renda-fixa-e-variavel": {
+  "base": "/img/blog/2025-08-comparando-fundos-de-renda-fixa-e-variavel",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-crescimento-de-investimentos-com-fundos-de-investimento": {
+  "base": "/img/blog/2025-08-crescimento-de-investimentos-com-fundos-de-investimento",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-custos-liquidez-e-regulamentacao-que-afetam-fundos-de-hedge-com-protec": {
+  "base": "/img/blog/2025-08-custos-liquidez-e-regulamentacao-que-afetam-fundos-de-hedge-com-protec",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-diversificacao-de-investimentos-com-fundos-de-investimento-em-debentur": {
+  "base": "/img/blog/2025-08-diversificacao-de-investimentos-com-fundos-de-investimento-em-debentur",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-diversificacao-de-investimentos-com-fundos-offshore": {
+  "base": "/img/blog/2025-08-diversificacao-de-investimentos-com-fundos-offshore",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-estrategias-de-investimento-comuns-dentro-de-fundos-de-hedge": {
+  "base": "/img/blog/2025-08-estrategias-de-investimento-comuns-dentro-de-fundos-de-hedge",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-estrategias-de-investimento-em-cenarios-inflacionarios": {
+  "base": "/img/blog/2025-08-estrategias-de-investimento-em-cenarios-inflacionarios",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-estrategias-de-investimento-em-commodities": {
+  "base": "/img/blog/2025-08-estrategias-de-investimento-em-commodities",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-estrategias-de-investimento-para-iniciantes": {
+  "base": "/img/blog/2025-08-estrategias-de-investimento-para-iniciantes",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-estrategias-de-investimento-para-proteger-seu-dinheiro": {
+  "base": "/img/blog/2025-08-estrategias-de-investimento-para-proteger-seu-dinheiro",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-estrategias-para-maximizar-o-rendimento-de-fundos-indexados": {
+  "base": "/img/blog/2025-08-estrategias-para-maximizar-o-rendimento-de-fundos-indexados",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-financas-sustentaveis-o-futuro-dos-investimentos": {
+  "base": "/img/blog/2025-08-financas-sustentaveis-o-futuro-dos-investimentos",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-fundos-de-energia-eolica-promissores-e-suas-variantes-onshore-e-offsho": {
+  "base": "/img/blog/2025-08-fundos-de-energia-eolica-promissores-e-suas-variantes-onshore-e-offsho",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-fundos-de-investimento-alternativos-e-suas-oportunidades": {
+  "base": "/img/blog/2025-08-fundos-de-investimento-alternativos-e-suas-oportunidades",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-fundos-de-investimento-com-gestao-ativa-rentavel": {
+  "base": "/img/blog/2025-08-fundos-de-investimento-com-gestao-ativa-rentavel",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-08-fundos-de-investimento-com-liquidez-diaria-conservadores": {
+  "base": "/img/blog/2025-08-fundos-de-investimento-com-liquidez-diaria-conservadores",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-08-fundos-de-investimento-com-taxa-baixa-rendem-mais": {
+  "base": "/img/blog/2025-08-fundos-de-investimento-com-taxa-baixa-rendem-mais",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-08-fundos-de-investimento-de-credito-privado-entenda-melhor": {
+  "base": "/img/blog/2025-08-fundos-de-investimento-de-credito-privado-entenda-melhor",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-08-fundos-de-investimento-de-credito-privado-rentaveis": {
+  "base": "/img/blog/2025-08-fundos-de-investimento-de-credito-privado-rentaveis",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-08-fundos-de-investimento-de-indexados-rendem-mais": {
+  "base": "/img/blog/2025-08-fundos-de-investimento-de-indexados-rendem-mais",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-08-fundos-de-investimento-de-renda-fixa-para-emergencias": {
+  "base": "/img/blog/2025-08-fundos-de-investimento-de-renda-fixa-para-emergencias",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-08-fundos-de-investimento-em-acoes-de-tecnologia-seguros": {
+  "base": "/img/blog/2025-08-fundos-de-investimento-em-acoes-de-tecnologia-seguros",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-08-fundos-de-investimento-em-biogas-e-biomassa-como-opcoes-diversificadas": {
+  "base": "/img/blog/2025-08-fundos-de-investimento-em-biogas-e-biomassa-como-opcoes-diversificadas",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-fundos-de-investimento-em-commodities-descubra-como": {
+  "base": "/img/blog/2025-08-fundos-de-investimento-em-commodities-descubra-como",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-08-fundos-de-investimento-em-commodities-para-diversificar": {
+  "base": "/img/blog/2025-08-fundos-de-investimento-em-commodities-para-diversificar",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-08-fundos-de-investimento-em-debentures-atrativos": {
+  "base": "/img/blog/2025-08-fundos-de-investimento-em-debentures-atrativos",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-08-fundos-de-investimento-em-energia-renovavel-promissores": {
+  "base": "/img/blog/2025-08-fundos-de-investimento-em-energia-renovavel-promissores",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-08-fundos-de-investimento-em-hedge-e-protecao-financeira": {
+  "base": "/img/blog/2025-08-fundos-de-investimento-em-hedge-e-protecao-financeira",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-08-fundos-de-investimento-em-previdencia-privada-agora-com-beneficios-fis": {
+  "base": "/img/blog/2025-08-fundos-de-investimento-em-previdencia-privada-agora-com-beneficios-fis",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-08-fundos-de-investimento-em-startups-promissoras": {
+  "base": "/img/blog/2025-08-fundos-de-investimento-em-startups-promissoras",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-08-fundos-de-investimento-imobiliario-que-garantem-retorno": {
+  "base": "/img/blog/2025-08-fundos-de-investimento-imobiliario-que-garantem-retorno",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-08-fundos-de-investimento-multi-ativos-que-transformam": {
+  "base": "/img/blog/2025-08-fundos-de-investimento-multi-ativos-que-transformam",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-08-fundos-de-investimento-na-bolsa-que-crescem": {
+  "base": "/img/blog/2025-08-fundos-de-investimento-na-bolsa-que-crescem",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-08-fundos-de-investimento-na-bolsa-que-crescem-1": {
+  "base": "/img/blog/2025-08-fundos-de-investimento-na-bolsa-que-crescem-1",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-08-fundos-de-investimento-na-bolsa-que-crescem-2": {
+  "base": "/img/blog/2025-08-fundos-de-investimento-na-bolsa-que-crescem-2",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-08-fundos-de-investimento-offshore-com-vantagens-fiscais": {
+  "base": "/img/blog/2025-08-fundos-de-investimento-offshore-com-vantagens-fiscais",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-08-fundos-de-investimento-para-aposentadoria-segura": {
+  "base": "/img/blog/2025-08-fundos-de-investimento-para-aposentadoria-segura",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-08-fundos-de-investimento-para-iniciantes-dicas-uteis": {
+  "base": "/img/blog/2025-08-fundos-de-investimento-para-iniciantes-dicas-uteis",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-08-fundos-de-investimento-para-protecao-da-inflacao": {
+  "base": "/img/blog/2025-08-fundos-de-investimento-para-protecao-da-inflacao",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-08-fundos-de-investimento-sustentaveis-com-impacto": {
+  "base": "/img/blog/2025-08-fundos-de-investimento-sustentaveis-com-impacto",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-08-fundos-de-investimento-sustentavel-e-esg-em": {
+  "base": "/img/blog/2025-08-fundos-de-investimento-sustentavel-e-esg-em",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-08-fundos-esg-o-que-sao-e-como-funcionam": {
+  "base": "/img/blog/2025-08-fundos-esg-o-que-sao-e-como-funcionam",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-impacto-da-gestao-de-investimentos-na-avaliacao-de-desempenho": {
+  "base": "/img/blog/2025-08-impacto-da-gestao-de-investimentos-na-avaliacao-de-desempenho",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-impacto-da-inflacao-nos-fundos-de-investimento": {
+  "base": "/img/blog/2025-08-impacto-da-inflacao-nos-fundos-de-investimento",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-08-impacto-das-taxas-na-rentabilidade-dos-fundos": {
+  "base": "/img/blog/2025-08-impacto-das-taxas-na-rentabilidade-dos-fundos",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-importancia-da-avaliacao-de-desempenho-de-fundos-de-investimento-em-20": {
+  "base": "/img/blog/2025-08-importancia-da-avaliacao-de-desempenho-de-fundos-de-investimento-em-20",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-melhores-fundos-de-investimento-para-aposentadoria": {
+  "base": "/img/blog/2025-08-melhores-fundos-de-investimento-para-aposentadoria",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-melhores-plataformas-para-investir-em-fundos-de-investimento": {
+  "base": "/img/blog/2025-08-melhores-plataformas-para-investir-em-fundos-de-investimento",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800,
+   1200
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    1200
+   ]
+  }
+ },
+ "2025-08-o-mercado-de-commodities-e-suas-oportunidades": {
+  "base": "/img/blog/2025-08-o-mercado-de-commodities-e-suas-oportunidades",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-o-papel-da-transparencia-nos-fundos-de-investimento": {
+  "base": "/img/blog/2025-08-o-papel-da-transparencia-nos-fundos-de-investimento",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-o-papel-dos-fundos-de-investimento-de-credito-privado-na-economia": {
+  "base": "/img/blog/2025-08-o-papel-dos-fundos-de-investimento-de-credito-privado-na-economia",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-o-que-e-a-inflacao-e-como-ela-afeta-seus-investimentos": {
+  "base": "/img/blog/2025-08-o-que-e-a-inflacao-e-como-ela-afeta-seus-investimentos",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-o-que-sao-fundos-de-investimento-com-liquidez-diaria-para-investidores": {
+  "base": "/img/blog/2025-08-o-que-sao-fundos-de-investimento-com-liquidez-diaria-para-investidores",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-o-que-sao-fundos-de-investimento-de-credito-privado": {
+  "base": "/img/blog/2025-08-o-que-sao-fundos-de-investimento-de-credito-privado",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-o-que-sao-fundos-de-investimento-de-credito-privado-1": {
+  "base": "/img/blog/2025-08-o-que-sao-fundos-de-investimento-de-credito-privado-1",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-o-que-sao-fundos-de-investimento-de-indexados": {
+  "base": "/img/blog/2025-08-o-que-sao-fundos-de-investimento-de-indexados",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-o-que-sao-fundos-de-investimento-de-renda-fixa-com-alta-liquidez": {
+  "base": "/img/blog/2025-08-o-que-sao-fundos-de-investimento-de-renda-fixa-com-alta-liquidez",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-o-que-sao-fundos-de-investimento-e-como-funcionam": {
+  "base": "/img/blog/2025-08-o-que-sao-fundos-de-investimento-e-como-funcionam",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-o-que-sao-fundos-de-investimento-em-acoes-de-tecnologia": {
+  "base": "/img/blog/2025-08-o-que-sao-fundos-de-investimento-em-acoes-de-tecnologia",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-o-que-sao-fundos-de-investimento-em-commodities": {
+  "base": "/img/blog/2025-08-o-que-sao-fundos-de-investimento-em-commodities",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-o-que-sao-fundos-de-investimento-em-commodities-1": {
+  "base": "/img/blog/2025-08-o-que-sao-fundos-de-investimento-em-commodities-1",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-o-que-sao-fundos-de-investimento-em-debentures": {
+  "base": "/img/blog/2025-08-o-que-sao-fundos-de-investimento-em-debentures",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-o-que-sao-fundos-de-investimento-em-fundos-de-hedge-com-estrategias-de": {
+  "base": "/img/blog/2025-08-o-que-sao-fundos-de-investimento-em-fundos-de-hedge-com-estrategias-de",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-o-que-sao-fundos-de-investimento-em-renda-variavel-com-gestao-ativa": {
+  "base": "/img/blog/2025-08-o-que-sao-fundos-de-investimento-em-renda-variavel-com-gestao-ativa",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-o-que-sao-fundos-de-investimento-em-startups-promissoras": {
+  "base": "/img/blog/2025-08-o-que-sao-fundos-de-investimento-em-startups-promissoras",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-o-que-sao-fundos-de-investimento-imobiliario": {
+  "base": "/img/blog/2025-08-o-que-sao-fundos-de-investimento-imobiliario",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-o-que-sao-fundos-de-investimento-multi-ativos": {
+  "base": "/img/blog/2025-08-o-que-sao-fundos-de-investimento-multi-ativos",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-o-que-sao-fundos-de-investimento-na-bolsa": {
+  "base": "/img/blog/2025-08-o-que-sao-fundos-de-investimento-na-bolsa",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-o-que-sao-fundos-de-investimento-offshore": {
+  "base": "/img/blog/2025-08-o-que-sao-fundos-de-investimento-offshore",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-o-que-sao-fundos-de-investimento-para-aposentadoria-planejada": {
+  "base": "/img/blog/2025-08-o-que-sao-fundos-de-investimento-para-aposentadoria-planejada",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-o-que-sao-fundos-de-investimento-para-protecao-da-inflacao": {
+  "base": "/img/blog/2025-08-o-que-sao-fundos-de-investimento-para-protecao-da-inflacao",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-o-que-sao-fundos-de-investimento-sustentaveis": {
+  "base": "/img/blog/2025-08-o-que-sao-fundos-de-investimento-sustentaveis",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-o-que-sao-fundos-de-investimento-sustentavel": {
+  "base": "/img/blog/2025-08-o-que-sao-fundos-de-investimento-sustentavel",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-o-que-sao-fundos-imobiliarios-e-como-funcionam": {
+  "base": "/img/blog/2025-08-o-que-sao-fundos-imobiliarios-e-como-funcionam",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-panorama-do-mercado-e-fundos-de-investimento-em-energia-renovavel-com": {
+  "base": "/img/blog/2025-08-panorama-do-mercado-e-fundos-de-investimento-em-energia-renovavel-com",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-perfil-de-investidor-em-fundos-de-credito-privado": {
+  "base": "/img/blog/2025-08-perfil-de-investidor-em-fundos-de-credito-privado",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-planejamento-financeiro-com-fundos-de-investimento": {
+  "base": "/img/blog/2025-08-planejamento-financeiro-com-fundos-de-investimento",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-renda-fixa-vs-renda-variavel-qual-escolher": {
+  "base": "/img/blog/2025-08-renda-fixa-vs-renda-variavel-qual-escolher",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-renda-passiva-com-fundos-de-investimento-imobiliario": {
+  "base": "/img/blog/2025-08-renda-passiva-com-fundos-de-investimento-imobiliario",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-rentabilidade-alta-em-fundos-de-renda-fixa": {
+  "base": "/img/blog/2025-08-rentabilidade-alta-em-fundos-de-renda-fixa",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-rentabilidade-dos-fundos-de-investimento-em-commodities": {
+  "base": "/img/blog/2025-08-rentabilidade-dos-fundos-de-investimento-em-commodities",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-rentabilidade-dos-fundos-imobiliarios": {
+  "base": "/img/blog/2025-08-rentabilidade-dos-fundos-imobiliarios",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-risco-e-retorno-em-fundos-de-investimento-em-commodities": {
+  "base": "/img/blog/2025-08-risco-e-retorno-em-fundos-de-investimento-em-commodities",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-riscos-associados-ao-investimento-em-debentures": {
+  "base": "/img/blog/2025-08-riscos-associados-ao-investimento-em-debentures",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-riscos-associados-aos-fundos-de-investimento-de-credito-privado": {
+  "base": "/img/blog/2025-08-riscos-associados-aos-fundos-de-investimento-de-credito-privado",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-riscos-associados-aos-fundos-de-investimento-em-acoes-de-tecnologia": {
+  "base": "/img/blog/2025-08-riscos-associados-aos-fundos-de-investimento-em-acoes-de-tecnologia",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-seguranca-financeira-com-fundos-offshore": {
+  "base": "/img/blog/2025-08-seguranca-financeira-com-fundos-offshore",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-taxas-e-custos-em-fundos-de-investimento": {
+  "base": "/img/blog/2025-08-taxas-e-custos-em-fundos-de-investimento",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-tendencias-atuais-em-fundos-de-investimento-em-startups": {
+  "base": "/img/blog/2025-08-tendencias-atuais-em-fundos-de-investimento-em-startups",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-tendencias-de-investimento-sustentavel-em-2023": {
+  "base": "/img/blog/2025-08-tendencias-de-investimento-sustentavel-em-2023",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-tendencias-de-mercado-que-influenciam-fundos-de-investimento": {
+  "base": "/img/blog/2025-08-tendencias-de-mercado-que-influenciam-fundos-de-investimento",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-tipos-comuns-fundos-di-conservadores-e-fundos-de-renda-fixa-com-liquid": {
+  "base": "/img/blog/2025-08-tipos-comuns-fundos-di-conservadores-e-fundos-de-renda-fixa-com-liquid",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-vantagens-de-investir-em-fundos-de-investimento": {
+  "base": "/img/blog/2025-08-vantagens-de-investir-em-fundos-de-investimento",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-vantagens-dos-fundos-de-investimento-com-taxa-baixa": {
+  "base": "/img/blog/2025-08-vantagens-dos-fundos-de-investimento-com-taxa-baixa",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-vantagens-dos-fundos-de-investimento-em-previdencia-privada": {
+  "base": "/img/blog/2025-08-vantagens-dos-fundos-de-investimento-em-previdencia-privada",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "2025-08-vantagens-dos-fundos-de-investimento-sustentavel-com-praticas-esg-em-2": {
+  "base": "/img/blog/2025-08-vantagens-dos-fundos-de-investimento-sustentavel-com-praticas-esg-em-2",
+  "width": 1200,
+  "height": 675,
+  "avif": [
+   480,
+   800
+  ],
+  "fallback": {
+   "ext": "jpg",
+   "widths": [
+    800
+   ]
+  }
+ },
+ "logo-rafaela-alves-assessora-de-investimento-eqi": {
+  "base": "/img/logo-rafaela-alves-assessora-de-investimento-eqi",
+  "width": 2556,
+  "height": 634,
+  "avif": [
+   280,
+   560,
+   840
+  ],
+  "fallback": {
+   "ext": "webp",
+   "widths": [
+    840
+   ]
+  }
+ },
+ "rafaela-alves-assessora-de-investimentos": {
+  "base": "/img/rafaela-alves-assessora-de-investimentos",
+  "width": 832,
+  "height": 1216,
+  "avif": [
+   420,
+   640,
+   832
+  ],
+  "fallback": {
+   "ext": "webp",
+   "widths": [
+    832
+   ]
+  }
+ },
+ "rafaela-alves-eqi-investimentos": {
+  "base": "/img/rafaela-alves-eqi-investimentos",
+  "width": 832,
+  "height": 1216,
+  "avif": [
+   420,
+   640,
+   832
+  ],
+  "fallback": {
+   "ext": "webp",
+   "widths": [
+    832
+   ]
+  }
+ },
+ "rafaela-alves-evento-mercado-financeiro": {
+  "base": "/img/rafaela-alves-evento-mercado-financeiro",
+  "width": 863,
+  "height": 2696,
+  "avif": [
+   280,
+   440,
+   640
+  ],
+  "fallback": {
+   "ext": "webp",
+   "widths": [
+    640
+   ]
+  }
+ },
+ "selo-anbima-cea": {
+  "base": "/img/selo-anbima-cea",
+  "width": 225,
+  "height": 226,
+  "avif": [
+   120,
+   225
+  ],
+  "fallback": {
+   "ext": "webp",
+   "widths": [
+    225
+   ]
+  }
+ },
+ "selo-anbima-cpa-20": {
+  "base": "/img/selo-anbima-cpa-20",
+  "width": 241,
+  "height": 222,
+  "avif": [
+   120,
+   241
+  ],
+  "fallback": {
+   "ext": "webp",
+   "widths": [
+    241
+   ]
+  }
+ }
+}
