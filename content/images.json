@@ -3700,6 +3700,39 @@
    ]
   }
  },
+ "rafaela-alves-retrato-desktop": {
+  "base": "/img/rafaela-alves-retrato-desktop",
+  "width": 832,
+  "height": 1040,
+  "avif": [
+   480,
+   640,
+   832
+  ],
+  "fallback": {
+   "ext": "webp",
+   "widths": [
+    832
+   ]
+  }
+ },
+ "rafaela-alves-retrato-mobile": {
+  "base": "/img/rafaela-alves-retrato-mobile",
+  "width": 528,
+  "height": 930,
+  "avif": [
+   180,
+   270,
+   360,
+   528
+  ],
+  "fallback": {
+   "ext": "webp",
+   "widths": [
+    360
+   ]
+  }
+ },
  "selo-anbima-cea": {
   "base": "/img/selo-anbima-cea",
   "width": 225,

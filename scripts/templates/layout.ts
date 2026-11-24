@@ -27,16 +27,27 @@ export interface Shell {
   categories: Array<{ slug: string; name: string }>;
 }
 
+/** Navegação curta do cabeçalho (as âncoras são as mesmas do site original). */
 const NAV = [
-  { href: '/#sobre', label: 'Sobre mim' },
-  { href: '/#assessoria', label: 'Minha assessoria' },
-  { href: '/#eqi', label: 'Por que a EQI' },
+  { href: '/#assessoria', label: 'Como funciona' },
+  { href: '/#sobre', label: 'Sobre' },
   { href: '/#avaliacao', label: 'Depoimentos' },
-  { href: '/#faq', label: 'FAQ' },
+  { href: '/#faq', label: 'Dúvidas' },
   { href: '/blog/', label: 'Blog' },
 ];
 
-const DEFAULT_OG = { url: '/og-rafaela-alves.jpg', width: 1200, height: 630, alt: 'Rafaela Alves — Assessora de Investimentos na EQI' };
+/** O rodapé lista todas as seções. */
+const FOOTER_NAV = [
+  { href: '/#assessoria', label: 'Como funciona' },
+  { href: '/#sobre', label: 'Sobre a Rafaela' },
+  { href: '/#eqi', label: 'Vínculo com a EQI' },
+  { href: '/#avaliacao', label: 'Depoimentos' },
+  { href: '/#faq', label: 'Perguntas frequentes' },
+  { href: '/#contato', label: 'Contato' },
+  { href: '/blog/', label: 'Blog' },
+];
+
+const DEFAULT_OG = { url: '/og-rafaela-alves.jpg', width: 1200, height: 630, alt: 'Rafaela Alves, assessora de investimentos vinculada à EQI' };
 
 const SPECULATION = JSON.stringify({
   prefetch: [{ where: { and: [{ href_matches: '/*' }, { not: { href_matches: '/api/*' } }] }, eagerness: 'moderate' }],
@@ -63,7 +74,7 @@ function head(meta: PageMeta): string {
     meta.next ? `<link rel="next" href="${abs(meta.next)}">` : '',
     // Marca "tem JS" antes do primeiro paint: só então as animações de entrada escondem conteúdo.
     "<script>document.documentElement.classList.add('js')</script>",
-    '<link rel="preload" href="/fonts/bodoni-moda.woff2" as="font" type="font/woff2" crossorigin>',
+    '<link rel="preload" href="/fonts/playfair-display.woff2" as="font" type="font/woff2" crossorigin>',
     '<link rel="preload" href="/fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>',
     ...(meta.preloads ?? []),
     `<link rel="modulepreload" href="${meta.script}">`,
@@ -105,11 +116,10 @@ const LOGO = 'logo-rafaela-alves-assessora-de-investimento-eqi';
 function header(icons: Icons): string {
   const links = NAV.map((n) => `<li><a href="${n.href}">${n.label}</a></li>`).join('');
   return `
-<p class="topbar">Assessoria gratuita para clientes com investimentos a partir de <strong>R$&nbsp;300.000,00</strong></p>
 <header class="header" data-header>
   <div class="header__inner container">
     <a class="header__logo" href="/" aria-label="${esc(site.name)} — página inicial">
-      ${picture(LOGO, { alt: 'Rafaela Alves — Assessora de Investimento EQI', sizes: '(min-width: 62em) 230px, 190px', eager: true, maxWidth: 560 })}
+      ${picture(LOGO, { alt: 'Rafaela Alves — Assessora de Investimento EQI', sizes: '(min-width: 62em) 190px, 160px', eager: true, normalPriority: true, maxWidth: 560 })}
     </a>
     <nav class="nav" aria-label="Principal" id="menu" data-nav>
       <ul class="nav__list">${links}</ul>
@@ -130,7 +140,7 @@ function header(icons: Icons): string {
 
 function footer(shell: Shell): string {
   const { icons } = shell;
-  const nav = NAV.map((n) => `<li><a href="${n.href}">${n.label}</a></li>`).join('');
+  const nav = FOOTER_NAV.map((n) => `<li><a href="${n.href}">${n.label}</a></li>`).join('');
   const cats = shell.categories.map((c) => `<li><a href="/category/${c.slug}/">${esc(c.name)}</a></li>`).join('');
   return `
 <footer class="footer theme-deep">
@@ -139,12 +149,12 @@ function footer(shell: Shell): string {
       <a href="/" class="footer__logo" aria-label="${esc(site.name)} — página inicial">
         ${picture(LOGO, { alt: 'Rafaela Alves — Assessora de Investimento EQI', sizes: '(min-width: 48em) 340px, 260px' })}
       </a>
-      <p>Assessoria de investimentos para alta renda, pessoa física e empresas, em todo o Brasil — com a estrutura da EQI Investimentos.</p>
-      <a class="btn btn--gold" href="${site.openAccountUrl}" target="_blank" rel="noopener noreferrer">Abrir conta na EQI ${icons.use('arrow-up-right')}</a>
+      <p>Assessora de investimentos vinculada à EQI Investimentos. Atendimento a pessoa física e empresas em todo o Brasil.</p>
+      <a class="btn btn--outline" href="${site.openAccountUrl}" target="_blank" rel="noopener noreferrer">Abrir conta na EQI ${icons.use('arrow-up-right')}</a>
     </div>
     <nav class="footer__col" aria-label="Rodapé — navegação">
       <h2 class="footer__title">Navegação</h2>
-      <ul>${nav}<li><a href="/#contato">Contato</a></li></ul>
+      <ul>${nav}</ul>
     </nav>
     <nav class="footer__col" aria-label="Rodapé — blog">
       <h2 class="footer__title">Blog</h2>
@@ -170,8 +180,8 @@ function footer(shell: Shell): string {
 
 function fixtures(icons: Icons): string {
   return `
-<a class="wa-float" href="${esc(whatsappUrl())}" target="_blank" rel="noopener noreferrer" aria-label="Falar com a Rafaela no WhatsApp" data-wa="flutuante">
-  ${icons.use('whatsapp')}<span class="wa-float__label">Fale comigo</span>
+<a class="sticky-cta" href="${esc(whatsappUrl())}" target="_blank" rel="noopener noreferrer" aria-label="Falar com a Rafaela no WhatsApp" data-wa="flutuante" data-sticky-cta>
+  ${icons.use('whatsapp')}<span>Falar com a Rafaela</span>
 </a>
 <div class="cookie" role="dialog" aria-live="polite" aria-label="Aviso de cookies" hidden data-cookie>
   <p>Utilizo cookies para melhorar a sua experiência e medir o desempenho do site. Saiba mais na <a href="/politica-de-privacidade/">Política de Privacidade</a>.</p>

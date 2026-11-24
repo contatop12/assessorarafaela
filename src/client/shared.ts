@@ -1,10 +1,7 @@
 /**
- * Comportamento compartilhado por todas as páginas: cabeçalho, menu mobile, animações de
- * entrada, barra de progresso, cookies + Google Tag Manager, rastreio de cliques e prefetch.
+ * Comportamento compartilhado por todas as páginas: cabeçalho, menu mobile, CTA fixo de WhatsApp,
+ * barra de progresso, cookies + Google Tag Manager, rastreio de cliques e prefetch.
  */
-
-export const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-export const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
 export const $ = <T extends Element = HTMLElement>(sel: string, root: ParentNode = document): T | null => root.querySelector<T>(sel);
 export const $$ = <T extends Element = HTMLElement>(sel: string, root: ParentNode = document): T[] => [...root.querySelectorAll<T>(sel)];
@@ -59,9 +56,23 @@ declare global {
   }
 }
 
+/**
+ * Envia um evento ao dataLayer (GTM). Só entram dados de navegação — nunca nome, telefone,
+ * e-mail ou faixa patrimonial. Se o visitante recusou os cookies, o GTM não processa nada.
+ */
 export function track(event: string, params: Record<string, unknown> = {}): void {
   (window.dataLayer ??= []).push({ event, ...params });
 }
+
+/* ---------------------------------------------------------- estado da interface */
+
+const uiListeners: Array<() => void> = [];
+/** Menu ou aviso de cookies abriu/fechou: quem depende disso (o CTA fixo) se atualiza. */
+function uiChanged(): void {
+  for (const fn of uiListeners) fn();
+}
+
+/* ------------------------------------------------------------ consentimento */
 
 type Consent = 'granted' | 'denied';
 const CONSENT_KEY = 'ra-consent';
@@ -148,6 +159,7 @@ function initConsent(): void {
   const close = (value: Consent): void => {
     writeConsent(value);
     banner.hidden = true;
+    uiChanged();
     if (!gtmId) return;
     gtag('consent', 'update', consentState(value));
     if (value === 'granted') loadGtm(gtmId);
@@ -157,16 +169,42 @@ function initConsent(): void {
   for (const btn of $$('[data-cookie-open]')) {
     btn.addEventListener('click', () => {
       banner.hidden = false;
+      uiChanged();
       $<HTMLButtonElement>('[data-cookie-accept]', banner)?.focus();
     });
   }
   if (!stored) banner.hidden = false;
 }
 
+/**
+ * Cliques nos CTAs, sempre com a posição (`link_location`):
+ *   whatsapp_click  → qualquer link do WhatsApp (hero, assessoria, flutuante, formulario…)
+ *   form_cta_click  → links que levam ao formulário (ex.: "Prefiro deixar meu contato")
+ * Toques repetidos no mesmo botão em menos de 1 s contam uma vez só.
+ */
 function initClickTracking(): void {
+  let lastKey = '';
+  let lastAt = 0;
+  const once = (key: string): boolean => {
+    const now = Date.now();
+    if (key === lastKey && now - lastAt < 1000) return false;
+    lastKey = key;
+    lastAt = now;
+    return true;
+  };
   document.addEventListener('click', (e) => {
-    const link = (e.target as Element | null)?.closest<HTMLAnchorElement>('a[href^="https://wa.me"]');
-    if (link) track('whatsapp_click', { link_location: link.dataset.wa ?? 'outro', page_path: location.pathname });
+    const target = e.target as Element | null;
+    const wa = target?.closest<HTMLAnchorElement>('a[href^="https://wa.me"]');
+    if (wa) {
+      const where = wa.dataset.wa ?? 'outro';
+      if (once(`wa:${where}`)) track('whatsapp_click', { link_location: where, page_path: location.pathname });
+      return;
+    }
+    const toForm = target?.closest<HTMLAnchorElement>('a[data-cta-form]');
+    if (toForm) {
+      const where = toForm.dataset.ctaForm || 'outro';
+      if (once(`form:${where}`)) track('form_cta_click', { link_location: where, page_path: location.pathname });
+    }
   });
 }
 
@@ -178,7 +216,6 @@ function initHeader(): void {
   const nav = $('[data-nav]');
   const toggle = $<HTMLButtonElement>('[data-nav-toggle]');
   const label = toggle ? $('.sr-only', toggle) : null;
-  const waFloat = $('.wa-float');
   const isOpen = (): boolean => nav?.classList.contains('is-open') ?? false;
 
   onScroll((y, dy) => {
@@ -187,7 +224,6 @@ function initHeader(): void {
       if (dy > 4 && y > 520) header.classList.add('is-hidden');
       else if (dy < -4 || y <= 520) header.classList.remove('is-hidden');
     }
-    waFloat?.classList.toggle('is-visible', y > 420);
   });
 
   if (!nav || !toggle) return;
@@ -199,6 +235,7 @@ function initHeader(): void {
     if (label) label.textContent = open ? 'Fechar menu' : 'Abrir menu';
     document.documentElement.classList.toggle('has-menu-open', open);
     if (open) header.classList.remove('is-hidden');
+    uiChanged();
   };
   toggle.addEventListener('click', () => setOpen(!isOpen()));
   nav.addEventListener('click', (e) => {
@@ -231,25 +268,82 @@ function initHeader(): void {
   );
 }
 
-/* -------------------------------------------------------------------- reveal */
+/* --------------------------------------------------------- CTA fixo de WhatsApp */
 
-function initReveal(): void {
-  const els = $$('[data-reveal]');
-  if (reduceMotion || !('IntersectionObserver' in window)) {
-    for (const el of els) el.classList.add('is-in');
-    return;
-  }
-  const io = new IntersectionObserver(
-    (entries) => {
-      for (const e of entries) {
-        if (!e.isIntersecting) continue;
-        e.target.classList.add('is-in');
-        io.unobserve(e.target);
-      }
+/**
+ * Um único botão fixo de WhatsApp. Aparece depois que o botão da primeira dobra sai da tela (nas
+ * páginas sem ele, depois de rolar um pouco) e nunca junto de outro botão de WhatsApp do conteúdo —
+ * assim há sempre um só CTA de WhatsApp à vista. Some também enquanto algo mais importante ocupa o
+ * visitante: o formulário na tela, um campo em edição, o teclado aberto, o menu ou o aviso de cookies.
+ */
+function initStickyCta(): void {
+  const cta = $('[data-sticky-cta]');
+  if (!cta) return;
+  const root = document.documentElement;
+  const heroCta = $('[data-hero-cta]');
+  const formArea = $('[data-lead-card]');
+  const banner = $('[data-cookie]');
+  // `ready`: só decide depois de saber quais botões do conteúdo estão na tela (evita piscar no carregamento).
+  const state = { ready: false, scrolled: Boolean(heroCta), form: false, typing: false, keyboard: false };
+  const inView = new Set<Element>();
+
+  const sync = (): void => {
+    const busy = state.form || state.typing || state.keyboard || root.classList.contains('has-menu-open') || (banner ? !banner.hidden : false);
+    cta.classList.toggle('is-visible', state.ready && state.scrolled && inView.size === 0 && !busy);
+  };
+  uiListeners.push(sync);
+
+  // Botões de WhatsApp do conteúdo (o da primeira dobra entre eles). A faixa do cabeçalho não conta
+  // como área visível: sob ele, o botão já "saiu".
+  const inline = $$('main a.btn[data-wa], main a.contact__wa');
+  const headerH = $('[data-header]')?.offsetHeight ?? 0;
+  watch(
+    inline,
+    (el, visible) => {
+      if (visible) inView.add(el);
+      else inView.delete(el);
+      state.ready = true;
+      sync();
     },
-    { threshold: 0.12, rootMargin: '0px 0px -6% 0px' },
+    { rootMargin: `-${headerH}px 0px 0px 0px` },
   );
-  for (const el of els) io.observe(el);
+  if (!inline.length) state.ready = true;
+  if (!heroCta) {
+    onScroll((y) => {
+      const scrolled = y > 420;
+      if (scrolled === state.scrolled) return;
+      state.scrolled = scrolled;
+      sync();
+    });
+  }
+  if (formArea) {
+    watch([formArea], (_, visible) => {
+      state.form = visible;
+      sync();
+    });
+  }
+
+  const isField = (el: EventTarget | null): boolean =>
+    el instanceof HTMLElement && el.matches('input:not([type="radio"]):not([type="checkbox"]), textarea, select');
+  document.addEventListener('focusin', (e) => {
+    if (!isField(e.target)) return;
+    state.typing = true;
+    sync();
+  });
+  document.addEventListener('focusout', (e) => {
+    if (!isField(e.target)) return;
+    state.typing = false;
+    sync();
+  });
+  // Teclado virtual: a área visível encolhe bem mais que a janela.
+  const vv = window.visualViewport;
+  vv?.addEventListener('resize', () => {
+    const keyboard = window.innerHeight - vv.height > 150;
+    if (keyboard === state.keyboard) return;
+    state.keyboard = keyboard;
+    sync();
+  });
+  sync();
 }
 
 /* ------------------------------------------------------------------ progresso */
@@ -309,7 +403,7 @@ export function initShared(): void {
   initConsent();
   initClickTracking();
   initHeader();
-  initReveal();
+  initStickyCta();
   initProgress();
   initLegacyHashes();
   initPrefetch();

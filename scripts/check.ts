@@ -111,10 +111,36 @@ for (const file of files) {
     const visible = html.match(/<details class="faq__item"/g)?.length ?? 0;
     const inSchema = html.match(/"@type":"Question"/g)?.length ?? 0;
     if (visible !== inSchema) fail(`FAQ visível (${visible}) ≠ FAQ no schema (${inSchema})`);
-    for (const id of ['sobre', 'assessoria', 'eqi', 'avaliacao', 'faq', 'contato']) {
-      if (!html.includes(`id="${id}"`)) fail(`seção #${id} ausente`);
-    }
+    // Âncoras públicas (anúncios e links externos apontam para elas) + as novas seções.
+    const ids = ['trajetoria', 'assessoria', 'sobre', 'eqi', 'avaliacao', 'faq', 'contato', 'blog'];
+    for (const id of ids) if (!html.includes(`id="${id}"`)) fail(`seção #${id} ausente`);
+    // Ordem recomendada das seções da home.
+    const order = ids.map((id) => html.indexOf(`id="${id}"`));
+    if (order.some((pos, i) => i > 0 && pos < (order[i - 1] as number))) fail(`seções fora da ordem esperada: ${ids.join(' → ')}`);
     if (!html.includes('href="https://p12digital.com.br/"')) fail('crédito da P12 Digital ausente no rodapé');
+    if (!/<h2[^>]*>Como funciona a assessoria de investimentos<\/h2>/.test(html)) fail('H2 "Como funciona a assessoria de investimentos" ausente');
+    if (!/data-hero-cta/.test(html) || !/data-sticky-cta/.test(html)) fail('CTA da primeira dobra ou CTA fixo ausente');
+    if (/fetchpriority="high"[^>]*loading="lazy"|loading="lazy"[^>]*fetchpriority="high"/.test(html)) fail('imagem prioritária marcada como lazy');
+    // Termos que não podem voltar ao texto visível da home (custódia, promessa de ganho, superlativos sem prova).
+    const visibleText = html
+      .replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, ' ')
+      .replace(/<[^>]+>/g, ' ')
+      .toLowerCase();
+    const banned = [
+      'sob minha custódia',
+      'clientes satisfeitos',
+      'assessoria gratuita',
+      'gestora de recursos',
+      'consultoria de investimento',
+      'total liberdade',
+      'resultados comprovados',
+      'custo zero',
+      'maior portfólio',
+      'acima do cdi',
+      'acima do ipca',
+      'gerenciados',
+    ];
+    for (const term of banned) if (visibleText.includes(term)) fail(`termo vetado no texto da home: "${term}"`);
   }
 }
 

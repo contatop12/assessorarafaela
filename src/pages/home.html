@@ -1,221 +1,105 @@
 <!--
   Corpo da página inicial. Marcações de autoria (expandidas pelo build — ver scripts/lib/html.ts):
-    {{variavel}}  ·  {{wa}} / {{wa:Mensagem}}  ·  {{split:Texto}}  ·  <x-icon name="…">  ·  <x-img name="…" …>
-  Blocos repetitivos (FAQ, depoimentos, cards) vêm de src/content.ts.
+    {{variavel}}  ·  {{wa}} / {{wa:Mensagem}}  ·  <x-icon name="…">  ·  <x-img name="…" …>
+  Blocos repetitivos (números, etapas, depoimentos, FAQ, opções do formulário) vêm de src/content.ts.
+
+  Ordem das seções: primeira dobra → trajetória em números → como funciona → sobre → EQI →
+  depoimentos → perguntas frequentes → contato → blog.
+  Âncoras públicas (não renomear): #sobre #assessoria #eqi #avaliacao #faq #contato
 -->
 
-<!-- ============================================================ HERO -->
-<section class="hero theme-dark" aria-labelledby="hero-title" data-hero>
-  <div class="hero__glow" aria-hidden="true"></div>
+<!-- ================================================== PRIMEIRA DOBRA -->
+<!--
+  No celular: nome + título à esquerda e retrato à direita; abaixo, descrição, botão e critério.
+  No desktop: texto e botão à esquerda, retrato à direita. Nada aqui depende de animação para aparecer.
+-->
+<section class="hero theme-dark" aria-labelledby="hero-title">
   <div class="container hero__grid">
-    <div class="hero__copy">
-      <h1 class="hero__title" id="hero-title">
-        <span class="hero__kicker">Assessoria de investimentos para alta renda</span>
-        <span class="hero__headline">{{split:Quando o assunto é o seu patrimônio, você não pode se acomodar.}}</span>
-      </h1>
-      <p class="hero__lead">Sou Rafaela Alves, assessora de investimentos na EQI. Atendo uma carteira seleta de investidores com estratégia sob medida, acesso a oportunidades exclusivas e acompanhamento próximo — no Brasil e no exterior.</p>
-      <div class="hero__actions">
-        <a class="btn btn--gold btn--lg" href="{{wa}}" target="_blank" rel="noopener noreferrer" data-wa="hero" data-magnetic>
-          <x-icon name="whatsapp"><span>Falar com a Rafaela no WhatsApp</span>
-        </a>
-        <a class="btn btn--outline btn--lg" href="#contato">
-          <span>Preencher o formulário</span><x-icon name="arrow-down">
-        </a>
-      </div>
-      <div class="hero__creds">
-        <p class="hero__creds-label">Certificações</p>
-        <ul class="hero__creds-list">
-          <li><x-img name="selo-anbima-cpa-20" alt="Certificação ANBIMA CPA-20" sizes="56px" eager></li>
-          <li><x-img name="selo-anbima-cea" alt="Certificação ANBIMA CEA" sizes="56px" eager></li>
-          <li><img class="hero__ancord" src="/img/ancord.svg" alt="Ancord — Certificação e Credenciamento" width="156" height="50" decoding="async"></li>
-        </ul>
-      </div>
+    <div class="hero__intro">
+      <p class="hero__id">
+        <strong>{{name}}</strong>
+        <span>{{tagline}}</span>
+      </p>
+      <h1 class="hero__title" id="hero-title">Seu patrimônio merece uma estratégia à altura.</h1>
     </div>
 
-    <div class="hero__visual" data-pointer>
-      <div class="hero__seal" aria-hidden="true">{{rosette}}</div>
-      <svg class="hero__chart" viewBox="0 0 600 600" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-        <defs>
-          <linearGradient id="hero-area" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stop-color="#d5a436" stop-opacity=".28"/>
-            <stop offset="1" stop-color="#d5a436" stop-opacity="0"/>
-          </linearGradient>
-        </defs>
-        <path class="hero__chart-area" fill="url(#hero-area)" d="M0 540 C70 540 90 455 150 462 S240 380 300 388 S392 262 450 272 S545 150 600 96 L600 600 L0 600Z"/>
-        <path class="hero__chart-line" pathLength="1" fill="none" d="M0 540 C70 540 90 455 150 462 S240 380 300 388 S392 262 450 272 S545 150 600 96"/>
-      </svg>
-      <figure class="hero__portrait" data-depth="6">
-        <x-img name="rafaela-alves-assessora-de-investimentos" alt="Rafaela Alves, assessora de investimentos na EQI Investimentos" sizes="(min-width: 62em) 440px, (min-width: 40em) 52vw, 82vw" eager>
-      </figure>
-      <p class="chip chip--gold" data-depth="22">
-        <x-icon name="trending-up">
-        <span>Você lucrando <strong>acima do CDI</strong></span>
-      </p>
-      <p class="chip chip--green" data-depth="-16">
-        <x-icon name="shield-check">
-        <span>Você lucrando <strong>acima do IPCA</strong></span>
-      </p>
+    <figure class="hero__portrait">
+      <x-img name="rafaela-alves-retrato-mobile" art="rafaela-alves-retrato-desktop" art-media="(min-width: 62em)" art-sizes="(min-width: 75em) 460px, 38vw" alt="Rafaela Alves, assessora de investimentos vinculada à EQI" sizes="(min-width: 40em) 15rem, 40vw" eager>
+    </figure>
+
+    <div class="hero__body">
+      <!-- Em telas baixas ou estreitas a frase encurta (classes f = só na versão completa, s = só na curta). -->
+      <p class="hero__lead">Ajudo você a entender sua carteira<span class="f">,</span><span class="s"> e</span> avaliar alternativas no Brasil e no exterior<span class="f"> e acompanhar seus investimentos de perto</span>.</p>
+      <div class="hero__cta">
+        <a class="btn btn--gold btn--lg hero__btn" href="{{wa}}" target="_blank" rel="noopener noreferrer" data-wa="hero" data-hero-cta>
+          <x-icon name="whatsapp"><span>Falar com a Rafaela</span>
+        </a>
+        <p class="hero__min">{{minimum}}</p>
+      </div>
+      <a class="hero__alt" href="#contato" data-cta-form="hero">Prefiro deixar meu contato</a>
     </div>
   </div>
-
-  <ul class="stats container" aria-label="Números da minha trajetória">
-    {{stats}}
-  </ul>
 </section>
 
-<!-- =========================================================== SOBRE -->
-<section class="section theme-light about" id="sobre" aria-labelledby="sobre-title">
+<!-- ============================================ TRAJETÓRIA EM NÚMEROS -->
+<section class="track theme-dark" id="trajetoria" aria-labelledby="trajetoria-title">
+  <div class="container track__grid">
+    <h2 class="track__title" id="trajetoria-title">Minha trajetória em números</h2>
+    <dl class="track__list">
+      {{stats}}
+    </dl>
+  </div>
+</section>
+
+<!-- ======================================== COMO FUNCIONA A ASSESSORIA -->
+<section class="section theme-light how" id="assessoria" aria-labelledby="assessoria-title">
+  <div class="container">
+    <header class="section__head">
+      <h2 class="section__title" id="assessoria-title">Como funciona a assessoria de investimentos</h2>
+      <p class="section__lead">Da carteira que você tem hoje ao acompanhamento das suas decisões, em três etapas.</p>
+    </header>
+
+    <ol class="steps">
+      {{steps}}
+    </ol>
+
+    <div class="switch theme-dark">
+      <div class="switch__copy">
+        <h3>Já investe por um banco ou por uma corretora?</h3>
+        <p>A conversa pode começar pela carteira que você já tem. Olhamos juntos se ela continua adequada aos seus objetivos, ao seu prazo e à liquidez de que você precisa. Depois, você decide o que fazer.</p>
+      </div>
+      <a class="btn btn--gold btn--lg" href="{{wa:Olá, Rafaela! Já invisto e gostaria de conversar sobre a minha carteira atual.}}" target="_blank" rel="noopener noreferrer" data-wa="assessoria">
+        <x-icon name="whatsapp"><span>Falar com a Rafaela</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================= SOBRE A RAFAELA -->
+<section class="section theme-dark about" id="sobre" aria-labelledby="sobre-title">
   <div class="container about__grid">
-    <figure class="about__photo" data-reveal="left">
-      <x-img name="rafaela-alves-eqi-investimentos" alt="Rafaela Alves em seu escritório, vestindo blazer claro" sizes="(min-width: 62em) 440px, (min-width: 40em) 60vw, 88vw">
-      <figcaption>Rafaela Alves <span>Assessora de Investimentos na EQI</span></figcaption>
+    <figure class="about__photo">
+      <x-img name="rafaela-alves-eqi-investimentos" alt="Rafaela Alves sentada no escritório, de blazer claro, sorrindo para a câmera" sizes="(min-width: 62em) 440px, (min-width: 40em) 60vw, 88vw">
     </figure>
 
     <div class="about__copy">
-      <h2 class="section__title" id="sobre-title" data-reveal>Sobre mim: especialista em investimentos para alta renda</h2>
-      <p class="lead" data-reveal>Seja muito bem-vindo ao universo exclusivo de investimentos comigo, Rafaela Alves, na EQI Investimentos! Permita-me compartilhar um pouco sobre minha abordagem diferenciada, especialmente voltada para investidores de alta renda que buscam uma experiência única e personalizada.</p>
-      <p data-reveal>Com uma trajetória consolidada no atendimento a clientes de alta renda, acumulo passagens por instituições de prestígio como Santander Select e XP Investimentos. Atualmente na EQI Investimentos, trago a experiência de ter gerenciado mais de R$&nbsp;500 milhões ao longo da minha carreira, atendendo investidores em todo o Brasil com soluções para o mercado local e internacional.</p>
-      <p data-reveal>Minha missão é ser a parceira estratégica de clientes que buscam mais do que rentabilidade: uma orientação personalizada, técnica e focada na preservação e no crescimento de patrimônio.</p>
+      <h2 class="section__title" id="sobre-title">Sobre a Rafaela</h2>
+      <p class="lead">Sou assessora de investimentos vinculada à EQI Investimentos e atendo investidores de alta renda em todo o Brasil. Antes da EQI, construí minha carreira no Santander Select e na XP Investimentos.</p>
+      <p>Nesse caminho, acompanhei mais de R$&nbsp;500 milhões em patrimônio e atendi mais de 500 clientes. Hoje ajudo investidores a entender a própria carteira, avaliar alternativas no Brasil e no exterior e acompanhar os investimentos de perto.</p>
 
-      <ol class="path" aria-label="Trajetória profissional" data-reveal>
-        <li><span>Santander Select</span></li>
-        <li><span>XP Investimentos</span></li>
-        <li class="is-current"><span>EQI Investimentos</span><em>atual</em></li>
-      </ol>
+      <ol class="path" aria-label="Trajetória profissional">{{career}}</ol>
 
-      <dl class="facts" data-reveal>
-        <div><dt>Atuação</dt><dd>Assessora de investimentos na EQI Investimentos</dd></div>
-        <div><dt>Certificações</dt><dd>Ancord, CEA e CPA-20</dd></div>
-        <div><dt>Experiência</dt><dd>Mais de R$&nbsp;500 milhões gerenciados ao longo da carreira</dd></div>
+      <dl class="facts">
+        <div><dt>Atuação</dt><dd>Assessora de investimentos vinculada à EQI Investimentos</dd></div>
+        <div><dt>Certificações</dt><dd>{{credentialNames}}</dd></div>
         <div><dt>Atendimento</dt><dd>Pessoa física e empresas, em todo o Brasil</dd></div>
-        <div><dt>Para quem</dt><dd>Assessoria gratuita para investimentos a partir de R$&nbsp;300.000,00</dd></div>
+        <div><dt>Para quem</dt><dd>Quem tem a partir de R$&nbsp;300&nbsp;mil para investir</dd></div>
       </dl>
+      {{credentialBadges}}
 
-      <a class="btn btn--dark" href="{{wa}}" target="_blank" rel="noopener noreferrer" data-wa="sobre" data-reveal>
-        <x-icon name="whatsapp"><span>Entrar em contato</span>
+      <a class="btn btn--outline" href="{{wa}}" target="_blank" rel="noopener noreferrer" data-wa="sobre">
+        <x-icon name="whatsapp"><span>Falar com a Rafaela</span>
       </a>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================================ FAIXA -->
-<section class="band" aria-label="O que me move">
-  <p class="sr-only">Determinação, persistência, garra e força. Amor pelo meu trabalho.</p>
-  <div class="band__row" data-marquee="-1" aria-hidden="true"><div class="band__track">{{bandValues}}</div></div>
-  <div class="band__row band__row--outline" data-marquee="1" aria-hidden="true"><div class="band__track">{{bandLove}}</div></div>
-</section>
-
-<!-- ======================================================== LIBERDADE -->
-<section class="section theme-dark freedom" aria-labelledby="liberdade-title">
-  <div class="container freedom__grid">
-    <div class="freedom__figure" aria-hidden="true">
-      <div class="freedom__disc" data-parallax="-0.08"></div>
-      <div class="freedom__person" data-parallax="0.06">
-        <x-img name="rafaela-alves-evento-mercado-financeiro" alt="" sizes="(min-width: 62em) 300px, 46vw">
-      </div>
-    </div>
-
-    <div class="freedom__copy">
-      <h2 class="section__title" id="liberdade-title" data-reveal>Hoje desfruto de total liberdade em minhas recomendações</h2>
-      <p class="lead" data-reveal>Ao contrário do ambiente bancário tradicional, onde metas muitas vezes ofuscavam a qualidade do atendimento, hoje desfruto de total liberdade em minhas recomendações. Ao atender uma carteira mais seleta, consigo oferecer uma atenção personalizada, sempre pronta para proporcionar as melhores orientações de investimentos e responder rapidamente a qualquer dúvida.</p>
-
-      <div class="versus" data-reveal>
-        <div class="versus__col versus__col--before">
-          <h3><x-icon name="landmark">No banco tradicional</h3>
-          <ul>
-            <li>Metas que ofuscam a qualidade do atendimento</li>
-            <li>Carteira numerosa, atenção dividida</li>
-            <li>Dúvidas que esperam na fila</li>
-          </ul>
-        </div>
-        <div class="versus__col versus__col--after">
-          <h3><x-icon name="feather">Na minha assessoria</h3>
-          <ul>
-            <li><x-icon name="check">Total liberdade nas recomendações</li>
-            <li><x-icon name="check">Carteira seleta, atenção personalizada</li>
-            <li><x-icon name="check">Resposta rápida a qualquer dúvida</li>
-          </ul>
-        </div>
-      </div>
-
-      <p data-reveal>Minha paixão pelo mercado financeiro transcende o convencional. Encaro meu papel não apenas como gestora de recursos, mas como uma facilitadora para transformar e enriquecer a vida dos meus clientes por meio de estratégias de investimento sofisticadas.</p>
-
-      <div class="certs" data-reveal>
-        <ul class="certs__badges" aria-label="Certificações">
-          <li><x-img name="selo-anbima-cpa-20" alt="Selo ANBIMA Profissional CPA-20" sizes="84px"></li>
-          <li><x-img name="selo-anbima-cea" alt="Selo ANBIMA Profissional CEA" sizes="84px"></li>
-          <li><img src="/img/ancord.svg" alt="Ancord — Certificação e Credenciamento" width="187" height="60" loading="lazy" decoding="async"></li>
-        </ul>
-        <p>Detenho as principais certificações do mercado, incluindo Ancord, CEA e CPA-20, mantendo um compromisso constante com atualizações técnicas. Minha atuação consiste em traduzir a complexidade do cenário econômico em oportunidades exclusivas, sempre com absoluto rigor e respeito ao perfil de risco de cada investidor.</p>
-      </div>
-
-      <a class="btn btn--gold" href="{{wa}}" target="_blank" rel="noopener noreferrer" data-wa="liberdade" data-reveal data-magnetic>
-        <x-icon name="whatsapp"><span>Entrar em contato</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ======================================================= ASSESSORIA -->
-<section class="section theme-light why" id="assessoria" aria-labelledby="assessoria-title">
-  <div class="container">
-    <header class="section__head">
-      <h2 class="section__title" id="assessoria-title" data-reveal>Por que escolher minha assessoria de investimentos?</h2>
-      <p class="section__lead" data-reveal>Quatro compromissos que assumo com cada cliente da minha carteira.</p>
-    </header>
-
-    <div class="why__grid">
-      <div class="tabs" data-tabs>
-        <div class="tabs__list" role="tablist" aria-label="Motivos para escolher a minha assessoria" data-reveal>
-          {{reasonsTabs}}
-        </div>
-        <div class="tabs__body">
-          <div class="tabs__panels">
-            {{reasonsPanels}}
-          </div>
-
-          <figure class="why__chart" aria-hidden="true" data-reveal="draw">
-        <svg viewBox="0 0 600 440" focusable="false">
-          <defs>
-            <linearGradient id="why-green" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#00795e" stop-opacity=".55"/>
-              <stop offset="1" stop-color="#00795e" stop-opacity=".04"/>
-            </linearGradient>
-            <linearGradient id="why-gold" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0" stop-color="#d5a436" stop-opacity=".42"/>
-              <stop offset="1" stop-color="#d5a436" stop-opacity="0"/>
-            </linearGradient>
-          </defs>
-          <g class="why__chart-grid">
-            <path d="M0 100H600M0 200H600M0 300H600M0 400H600"/>
-          </g>
-          <path class="why__chart-fill" fill="url(#why-gold)" d="M0 400 C50 400 82 120 140 84 S222 300 282 292 S352 64 412 92 S522 240 600 112 L600 400Z"/>
-          <path class="why__chart-fill" fill="url(#why-green)" d="M0 400 C60 400 92 252 152 250 S232 332 302 302 S382 132 442 152 S542 262 600 204 L600 400Z"/>
-          <path class="why__chart-stroke why__chart-stroke--gold" pathLength="1" d="M0 400 C50 400 82 120 140 84 S222 300 282 292 S352 64 412 92 S522 240 600 112"/>
-          <path class="why__chart-stroke why__chart-stroke--green" pathLength="1" d="M0 400 C60 400 92 252 152 250 S232 332 302 302 S382 132 442 152 S542 262 600 204"/>
-          </svg>
-          </figure>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ========================================================== SERVIÇO -->
-<section class="section theme-dark offers" aria-labelledby="servico-title">
-  <div class="container">
-    <header class="section__head">
-      <h2 class="section__title" id="servico-title" data-reveal>O que ofereço no meu serviço</h2>
-      <p class="section__lead" data-reveal>Quatro frentes de trabalho para que os seus investimentos acompanhem os seus objetivos.</p>
-    </header>
-    <ul class="offers__grid">
-      {{offers}}
-    </ul>
-    <div class="included" data-reveal>
-      <p class="included__label">Você também conta com</p>
-      <ul class="included__list">
-        {{included}}
-      </ul>
     </div>
   </div>
 </section>
@@ -224,38 +108,30 @@
 <section class="section theme-light eqi" id="eqi" aria-labelledby="eqi-title">
   <div class="container eqi__grid">
     <div class="eqi__intro">
-      <h2 class="section__title" id="eqi-title" data-reveal>Por que investir com a EQI Investimentos?</h2>
-      <p class="lead" data-reveal>A EQI Investimentos não é apenas uma corretora, mas uma das maiores casas de assessoria do Brasil, agora com a solidez de ter o BTG Pactual — o maior banco de investimentos da América Latina — como seu parceiro estratégico e custodiante.</p>
-      <p data-reveal>Investir com a EQI é unir a segurança institucional de um grande banco com a exclusividade e agilidade de uma assessoria premiada. É ter a certeza de que seu patrimônio está sendo cuidado por quem realmente entende de estratégia e tem acesso às melhores ferramentas do mercado global.</p>
-      <a class="btn btn--dark" href="{{wa:Olá, Rafaela! Quero saber mais sobre como investir pela EQI.}}" target="_blank" rel="noopener noreferrer" data-wa="eqi" data-reveal>
-        <x-icon name="whatsapp"><span>Entrar em contato</span>
+      <h2 class="section__title" id="eqi-title">Assessoria de investimentos vinculada à EQI</h2>
+      <p class="lead">A EQI Investimentos é a instituição pela qual os meus clientes investem. Veja como esse vínculo funciona e qual é o meu papel.</p>
+      <a class="textlink" href="{{wa:Olá, Rafaela! Quero saber mais sobre como investir pela EQI.}}" target="_blank" rel="noopener noreferrer" data-wa="eqi">
+        Tirar dúvidas sobre a EQI <x-icon name="arrow-up-right">
       </a>
     </div>
-    <div class="eqi__cards">
-      <h3 class="eqi__sub" data-reveal>Diferenciais e vantagens</h3>
-      <ol class="stack" data-stack>
-        {{eqiCards}}
-      </ol>
-    </div>
+    <dl class="eqi__role">
+      {{eqiRole}}
+    </dl>
   </div>
 </section>
 
 <!-- ====================================================== DEPOIMENTOS -->
 <section class="section theme-dark quotes" id="avaliacao" aria-labelledby="depoimentos-title">
   <div class="container">
-    <header class="section__head section__head--row">
-      <h2 class="section__title" id="depoimentos-title" data-reveal>Depoimentos de quem investe comigo</h2>
-      <div class="carousel__nav" data-carousel-nav="depoimentos">
-        <button type="button" class="iconbtn" data-prev aria-label="Depoimentos anteriores"><x-icon name="arrow-left"></button>
-        <button type="button" class="iconbtn" data-next aria-label="Próximos depoimentos"><x-icon name="arrow-right"></button>
-      </div>
+    <header class="section__head">
+      <h2 class="section__title" id="depoimentos-title">Depoimentos de quem investe comigo</h2>
+      <p class="section__lead">Relatos de clientes sobre atendimento, clareza e acompanhamento. Não representam promessa nem garantia de resultados.</p>
     </header>
-  </div>
-  <div class="carousel" data-carousel="depoimentos">
-    <ul class="carousel__track" tabindex="0" aria-label="Depoimentos de clientes (role para o lado)">
+    <!-- No celular aparecem dois; o botão abre os demais. Todos estão no HTML. -->
+    <ul class="quotes__list" id="depoimentos-lista" data-quotes>
       {{testimonials}}
     </ul>
-    <div class="carousel__bar container" aria-hidden="true"><i data-carousel-progress></i></div>
+    <button class="btn btn--outline quotes__more" type="button" aria-expanded="false" aria-controls="depoimentos-lista" data-quotes-more>Ver mais depoimentos</button>
   </div>
 </section>
 
@@ -263,14 +139,13 @@
 <section class="section theme-light faq" id="faq" aria-labelledby="faq-title">
   <div class="container faq__grid">
     <div class="faq__intro">
-      <h2 class="section__title" id="faq-title" data-reveal>Perguntas frequentes</h2>
-      <p class="lead" data-reveal>Respostas diretas para as dúvidas mais comuns sobre a assessoria e a EQI.</p>
-      <p data-reveal>Não encontrou o que procurava?</p>
-      <a class="btn btn--dark" href="{{wa:Olá, Rafaela! Tenho uma dúvida sobre a assessoria de investimentos.}}" target="_blank" rel="noopener noreferrer" data-wa="faq" data-reveal>
-        <x-icon name="whatsapp"><span>Tirar dúvida no WhatsApp</span>
+      <h2 class="section__title" id="faq-title">Perguntas frequentes</h2>
+      <p class="lead">Respostas curtas para as dúvidas mais comuns antes da primeira conversa.</p>
+      <a class="btn btn--dark" href="{{wa:Olá, Rafaela! Tenho uma dúvida sobre a assessoria de investimentos.}}" target="_blank" rel="noopener noreferrer" data-wa="faq">
+        <x-icon name="whatsapp"><span>Tirar uma dúvida no WhatsApp</span>
       </a>
     </div>
-    <div class="faq__list" data-reveal>
+    <div class="faq__list">
       {{faq}}
     </div>
   </div>
@@ -280,60 +155,54 @@
 <section class="section theme-dark contact" id="contato" aria-labelledby="contato-title">
   <div class="container contact__grid">
     <div class="contact__copy">
-      <h2 class="section__title" id="contato-title" data-reveal>Converse agora com uma assessora exclusiva e inicie sua consultoria de investimento</h2>
-      <p class="lead" data-reveal>Preencha o formulário contando o seu valor acumulado até o momento e os seus objetivos, que retornarei o mais breve possível.</p>
-      <p data-reveal>Se preferir, fale direto comigo pelo WhatsApp:</p>
-      <a class="contact__wa" href="{{wa}}" target="_blank" rel="noopener noreferrer" data-wa="contato" data-reveal>
+      <h2 class="section__title" id="contato-title">Converse sobre seus investimentos</h2>
+      <p class="lead">Conte um pouco sobre o que você busca. Entraremos em contato pelo WhatsApp.</p>
+      <ul class="contact__points">
+        <li><x-icon name="check">{{minimum}}</li>
+        <li><x-icon name="check">Atendimento a pessoa física e empresas, em todo o Brasil.</li>
+        <li><x-icon name="check">Seus dados são usados apenas para este contato.</li>
+      </ul>
+      <p class="contact__or">Se preferir, fale direto pelo WhatsApp:</p>
+      <a class="contact__wa" href="{{wa}}" target="_blank" rel="noopener noreferrer" data-wa="contato">
         <span class="contact__wa-icon"><x-icon name="whatsapp"></span>
         <span><small>WhatsApp</small><strong>{{waDisplay}}</strong></span>
       </a>
-      <ul class="contact__points" data-reveal>
-        <li><x-icon name="check">Assessoria gratuita para investimentos a partir de R$&nbsp;300.000,00</li>
-        <li><x-icon name="check">Atendimento a pessoa física e empresas, em todo o Brasil</li>
-        <li><x-icon name="check">Seus dados são usados apenas para este contato</li>
-      </ul>
     </div>
 
-    <div class="contact__card" data-reveal="right">
-      <form class="form" action="/api/lead" method="post" data-lead-form>
-        <h3 class="form__title">Conte um pouco sobre você</h3>
-
-        <fieldset class="choice" data-field="valor">
-          <legend>Valor acumulado</legend>
-          <div class="choice__list">{{formValor}}</div>
-          <p class="field__error" hidden>Selecione uma opção.</p>
-        </fieldset>
-
-        <fieldset class="choice" data-field="objetivo">
-          <legend>Qual o seu principal objetivo financeiro?</legend>
-          <div class="choice__list">{{formObjetivo}}</div>
-          <p class="field__error" hidden>Selecione uma opção.</p>
-        </fieldset>
-
+    <div class="contact__card" data-lead-card>
+      <form class="form" action="/api/lead" method="post" aria-labelledby="contato-title" data-lead-form>
         <div class="field" data-field="nome">
-          <label for="f-nome">Nome completo</label>
-          <input id="f-nome" name="nome" type="text" autocomplete="name" placeholder="Seu nome" required minlength="2" maxlength="120">
-          <p class="field__error" hidden>Informe o seu nome.</p>
+          <label for="f-nome">Nome</label>
+          <input id="f-nome" name="nome" type="text" autocomplete="name" autocapitalize="words" spellcheck="false" required minlength="2" maxlength="120" aria-describedby="e-nome">
+          <p class="field__error" id="e-nome" hidden>Informe o seu nome.</p>
         </div>
-        <div class="form__row">
-          <div class="field" data-field="email">
-            <label for="f-email">E-mail</label>
-            <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="Seu melhor e-mail" required maxlength="160">
-            <p class="field__error" hidden>Informe um e-mail válido.</p>
-          </div>
-          <div class="field" data-field="whatsapp">
-            <label for="f-whatsapp">WhatsApp (com DDD)</label>
-            <input id="f-whatsapp" name="whatsapp" type="tel" autocomplete="tel-national" inputmode="tel" placeholder="(11) 99999-9999" required maxlength="16">
-            <p class="field__error" hidden>Informe o WhatsApp com DDD.</p>
-          </div>
+
+        <div class="field" data-field="whatsapp">
+          <label for="f-whatsapp">WhatsApp com DDD</label>
+          <input id="f-whatsapp" name="whatsapp" type="tel" autocomplete="tel-national" inputmode="tel" placeholder="(11) 99999-9999" required maxlength="16" aria-describedby="e-whatsapp">
+          <p class="field__error" id="e-whatsapp" hidden>Informe o WhatsApp com DDD.</p>
         </div>
+
+        <fieldset class="choice" data-field="valor" aria-describedby="e-valor">
+          <legend>Quanto você tem disponível para investir?</legend>
+          <div class="choice__list">{{formValor}}</div>
+          <p class="field__error" id="e-valor" hidden>Selecione uma faixa.</p>
+        </fieldset>
+
+        <fieldset class="choice" data-field="objetivo" aria-describedby="e-objetivo">
+          <legend>Qual é o seu objetivo principal?</legend>
+          <div class="choice__list">{{formObjetivo}}</div>
+          <p class="field__error" id="e-objetivo" hidden>Selecione um objetivo.</p>
+        </fieldset>
+
+        {{formEmail}}
 
         <div class="hp" aria-hidden="true">
           <label>Empresa <input name="empresa" type="text" tabindex="-1" autocomplete="off"></label>
         </div>
 
         <button class="btn btn--gold btn--lg form__submit" type="submit">
-          <span>Enviar e receber contato</span><x-icon name="arrow-right">
+          <span data-submit-label>Solicitar contato</span>
         </button>
         <p class="form__note">Ao enviar, você concorda com a <a href="/politica-de-privacidade/">Política de Privacidade</a>.</p>
         <p class="form__status" role="status" aria-live="polite"></p>
@@ -341,9 +210,9 @@
 
       <div class="form-success" hidden tabindex="-1" data-lead-success>
         <span class="form-success__icon"><x-icon name="check"></span>
-        <h3>Recebi os seus dados</h3>
-        <p data-lead-success-text>Retornarei o mais breve possível. Para adiantar a conversa, envie agora a sua mensagem pelo WhatsApp.</p>
-        <a class="btn btn--gold btn--lg" href="{{wa}}" target="_blank" rel="noopener noreferrer" data-wa="formulario" data-lead-success-link>
+        <h3>Recebemos o seu contato</h3>
+        <p data-lead-success-text>Entraremos em contato pelo WhatsApp. Se quiser adiantar a conversa, envie uma mensagem agora.</p>
+        <a class="btn btn--gold btn--lg" href="{{wa:Olá, Rafaela! Acabei de enviar meus dados pelo formulário do site.}}" target="_blank" rel="noopener noreferrer" data-wa="formulario" data-lead-success-link>
           <x-icon name="whatsapp"><span>Continuar no WhatsApp</span>
         </a>
       </div>
@@ -352,14 +221,14 @@
 </section>
 
 <!-- ============================================================= BLOG -->
-<section class="section theme-light home-blog" aria-labelledby="blog-title">
+<section class="section theme-light home-blog" id="blog" aria-labelledby="blog-title">
   <div class="container">
     <header class="section__head section__head--row">
-      <h2 class="section__title" id="blog-title" data-reveal>Meus últimos artigos</h2>
-      <a class="textlink" href="/blog/" data-reveal>Ver todos os artigos <x-icon name="arrow-right"></a>
+      <h2 class="section__title" id="blog-title">Artigos do blog</h2>
+      <a class="textlink" href="/blog/">Ver todos os artigos do blog <x-icon name="arrow-right"></a>
     </header>
     <div class="cards">
-      {{latestPosts}}
+      {{homePosts}}
     </div>
   </div>
 </section>

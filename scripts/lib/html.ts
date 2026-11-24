@@ -26,9 +26,15 @@ export interface PictureOptions {
   class?: string;
   /** Imagem acima da dobra: carrega já, com prioridade alta. */
   eager?: boolean;
+  /** Acima da dobra, mas sem disputar banda com a imagem principal (ex.: logo do cabeçalho). */
+  normalPriority?: boolean;
   /** Limita a maior largura usada (ex.: cards não precisam do arquivo de 1200px). */
   maxWidth?: number;
+  /** Direção de arte: outro recorte (com proporção própria) quando a media query casar. */
+  art?: { name: string; media: string; sizes: string };
 }
+
+const srcset = (im: ImageEntry, ws: number[], ext: string): string => ws.map((w) => `${im.base}-${w}.${ext} ${w}w`).join(', ');
 
 export function picture(name: string, o: PictureOptions): string {
   const im = manifest[name];
@@ -39,22 +45,37 @@ export function picture(name: string, o: PictureOptions): string {
   };
   const avif = pick(im.avif);
   const fb = pick(im.fallback.widths);
-  const set = (ws: number[], ext: string): string => ws.map((w) => `${im.base}-${w}.${ext} ${w}w`).join(', ');
   const cls = o.class ? ` class="${o.class}"` : '';
-  const loading = o.eager ? 'loading="eager" fetchpriority="high" decoding="async"' : 'loading="lazy" decoding="async"';
+  const loading = o.eager
+    ? `loading="eager"${o.normalPriority ? '' : ' fetchpriority="high"'} decoding="async"`
+    : 'loading="lazy" decoding="async"';
+  let artSources = '';
+  if (o.art) {
+    const alt = manifest[o.art.name];
+    if (!alt) throw new Error(`recorte de imagem desconhecido: ${o.art.name}`);
+    // width/height em cada <source>: o navegador reserva o espaço com a proporção do recorte escolhido.
+    const dims = `sizes="${o.art.sizes}" width="${alt.width}" height="${alt.height}"`;
+    artSources =
+      `<source media="${o.art.media}" type="image/avif" srcset="${srcset(alt, alt.avif, 'avif')}" ${dims}>` +
+      `<source media="${o.art.media}" srcset="${srcset(alt, alt.fallback.widths, alt.fallback.ext)}" ${dims}>`;
+  }
   return (
-    `<picture><source type="image/avif" srcset="${set(avif, 'avif')}" sizes="${o.sizes}" width="${im.width}" height="${im.height}">` +
-    `<img${cls} src="${im.base}-${fb[fb.length - 1]}.${im.fallback.ext}" srcset="${set(fb, im.fallback.ext)}" sizes="${o.sizes}" ` +
+    `<picture>${artSources}<source type="image/avif" srcset="${srcset(im, avif, 'avif')}" sizes="${o.sizes}" width="${im.width}" height="${im.height}">` +
+    `<img${cls} src="${im.base}-${fb[fb.length - 1]}.${im.fallback.ext}" srcset="${srcset(im, fb, im.fallback.ext)}" sizes="${o.sizes}" ` +
     `alt="${esc(o.alt)}" width="${im.width}" height="${im.height}" ${loading}></picture>`
   );
 }
 
-/** `<link rel="preload">` da imagem de LCP (mesmo srcset/sizes do <picture> para o navegador reaproveitar). */
-export function preloadImage(name: string, sizes: string): string {
+/**
+ * `<link rel="preload">` da imagem de LCP (mesmo srcset/sizes do <picture> para o navegador reaproveitar).
+ * Com `media`, o preload só vale para a faixa de tela que realmente usa aquele recorte.
+ */
+export function preloadImage(name: string, sizes: string, media?: string): string {
   const im = manifest[name];
   if (!im) return '';
-  const set = im.avif.map((w) => `${im.base}-${w}.avif ${w}w`).join(', ');
-  return `<link rel="preload" as="image" type="image/avif" imagesrcset="${set}" imagesizes="${sizes}" fetchpriority="high">`;
+  return `<link rel="preload" as="image" type="image/avif" imagesrcset="${srcset(im, im.avif, 'avif')}" imagesizes="${sizes}"${
+    media ? ` media="${media}"` : ''
+  } fetchpriority="high">`;
 }
 
 /* ----------------------------------------------------------------- ícones */
@@ -116,6 +137,7 @@ const flag = (tag: string, name: string): boolean => new RegExp(`\\s${name}(\\s|
  *   {{split:Texto}}              palavra a palavra em <span> (animação do título)
  *   <x-icon name="check">        ícone do sprite
  *   <x-img name="…" alt="…" sizes="…" [class] [eager] [max="800"]>   <picture> responsivo
+ *   <x-img … art="outro-recorte" art-media="(min-width: 62em)" art-sizes="…">   recorte alternativo por largura de tela
  */
 export function expand(html: string, ctx: ExpandContext): string {
   return html
@@ -141,12 +163,14 @@ export function expand(html: string, ctx: ExpandContext): string {
       const name = attr(tag, 'name');
       if (!name || !image(name)) throw new Error(`<x-img> com imagem desconhecida: ${tag}`);
       const max = attr(tag, 'max');
+      const art = attr(tag, 'art');
       return picture(name, {
         alt: attr(tag, 'alt') ?? '',
         sizes: attr(tag, 'sizes') ?? '100vw',
         class: attr(tag, 'class'),
         eager: flag(tag, 'eager'),
         ...(max ? { maxWidth: Number(max) } : {}),
+        ...(art ? { art: { name: art, media: attr(tag, 'art-media') ?? '(min-width: 62em)', sizes: attr(tag, 'art-sizes') ?? '50vw' } } : {}),
       });
     });
 }

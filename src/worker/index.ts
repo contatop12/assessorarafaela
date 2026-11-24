@@ -7,17 +7,24 @@
  *
  *   POST /api/lead   → valida o lead e encaminha para o webhook em LEAD_WEBHOOK_URL (se houver)
  */
+import { BELOW_MINIMUM, formOptions } from '../content.ts';
+import { site } from '../site.config.ts';
 
 interface Lead {
   nome: string;
+  /** Vazio quando o visitante não informou (campo opcional — ver site.leadForm.emailRequired). */
   email: string;
   whatsapp: string;
+  /** Faixa disponível para investir (uma das opções de formOptions.valor). */
   valor: string;
   objetivo: string;
+  /** Qualificação interna: a faixa informada atinge o mínimo de atendimento. Não vai para o analytics. */
+  qualificado: boolean;
 }
 
-const VALOR = ['Acima de 1 milhão', 'Entre R$501.000 e R$999.999', 'Entre R$300.000 e R$500.000', 'Abaixo de R$300.000'];
-const OBJETIVO = ['Melhorar meus investimentos', 'Ter uma aposentadoria confortável', 'Proteção financeira'];
+// As opções válidas são as mesmas exibidas no formulário (fonte única: src/content.ts).
+const VALOR: readonly string[] = formOptions.valor;
+const OBJETIVO: readonly string[] = formOptions.objetivo;
 const MAX_BODY_BYTES = 8 * 1024;
 
 const json = (body: unknown, status = 200): Response =>
@@ -72,21 +79,28 @@ function parse(raw: string, contentType: string): Record<string, unknown> | null
   }
 }
 
-function validate(data: Record<string, unknown>): { lead: Lead } | { error: string } {
+/** `field` diz ao formulário em qual campo mostrar o erro. */
+function validate(data: Record<string, unknown>): { lead: Lead } | { error: string; field: string } {
   const lead: Lead = {
     nome: text(data.nome, 120),
     email: text(data.email, 160).toLowerCase(),
     whatsapp: text(data.whatsapp, 20),
     valor: text(data.valor, 60),
     objetivo: text(data.objetivo, 60),
+    qualificado: false,
   };
-  if (!/\p{L}{2,}/u.test(lead.nome)) return { error: 'Informe o seu nome.' };
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(lead.email)) return { error: 'Informe um e-mail válido.' };
+  if (!/\p{L}{2,}/u.test(lead.nome)) return { error: 'Informe o seu nome.', field: 'nome' };
   const digits = lead.whatsapp.replace(/\D/g, '').replace(/^55(?=\d{10,11}$)/, '');
-  if (digits.length !== 10 && digits.length !== 11) return { error: 'Informe o WhatsApp com DDD.' };
-  if (!VALOR.includes(lead.valor)) return { error: 'Selecione o valor acumulado.' };
-  if (!OBJETIVO.includes(lead.objetivo)) return { error: 'Selecione o seu principal objetivo.' };
+  if (digits.length !== 10 && digits.length !== 11) return { error: 'Informe o WhatsApp com DDD.', field: 'whatsapp' };
+  if (!VALOR.includes(lead.valor)) return { error: 'Selecione quanto você tem disponível para investir.', field: 'valor' };
+  if (!OBJETIVO.includes(lead.objetivo)) return { error: 'Selecione o seu objetivo principal.', field: 'objetivo' };
+  const emailRequired: boolean = site.leadForm.emailRequired;
+  if ((lead.email !== '' || emailRequired) && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(lead.email)) {
+    return { error: 'Informe um e-mail válido.', field: 'email' };
+  }
   lead.whatsapp = `+55${digits}`;
+  // Abaixo do mínimo o lead é capturado do mesmo jeito; o CRM decide o que fazer com ele.
+  lead.qualificado = lead.valor !== BELOW_MINIMUM;
   return { lead };
 }
 
@@ -104,7 +118,7 @@ async function handleLead(request: Request, env: Env): Promise<Response> {
   const url = new URL(request.url);
   const wantsJson = (request.headers.get('accept') ?? '').includes('application/json');
   // Sem JS o formulário faz um POST comum: responde com redirecionamento (página de confirmação ou de volta ao formulário).
-  const reply = (body: { ok: boolean; forwarded?: boolean; error?: string }, status: number): Response =>
+  const reply = (body: { ok: boolean; forwarded?: boolean; error?: string; field?: string }, status: number): Response =>
     wantsJson ? json(body, status) : Response.redirect(`${url.origin}${body.ok ? '/obrigado/' : '/?erro=1#contato'}`, 303);
 
   // Só aceita envios feitos a partir do próprio site.
@@ -124,7 +138,7 @@ async function handleLead(request: Request, env: Env): Promise<Response> {
   }
 
   const result = validate(data);
-  if ('error' in result) return reply({ ok: false, error: result.error }, 422);
+  if ('error' in result) return reply({ ok: false, error: result.error, field: result.field }, 422);
 
   const payload = {
     ...result.lead,
@@ -153,8 +167,8 @@ async function handleLead(request: Request, env: Env): Promise<Response> {
       signal: AbortSignal.timeout(8000),
     });
     if (!res.ok) throw new Error(`webhook respondeu ${res.status}`);
-    // Sem dados pessoais nos logs (LGPD): só o que ajuda a operar.
-    console.log(JSON.stringify({ message: 'lead encaminhado', valor: payload.valor, objetivo: payload.objetivo }));
+    // Sem dados pessoais nem faixa patrimonial nos logs (LGPD): só o que ajuda a operar.
+    console.log(JSON.stringify({ message: 'lead encaminhado', qualificado: payload.qualificado, objetivo: payload.objetivo }));
     return reply({ ok: true, forwarded: true }, 200);
   } catch (err) {
     console.error(JSON.stringify({ message: 'falha ao encaminhar lead', error: err instanceof Error ? err.message : String(err) }));

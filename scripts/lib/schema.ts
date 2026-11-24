@@ -1,4 +1,7 @@
-/** Dados estruturados (schema.org / JSON-LD). Tudo aqui espelha conteúdo visível nas páginas. */
+/**
+ * Dados estruturados (schema.org / JSON-LD). Tudo aqui espelha conteúdo visível nas páginas e só
+ * informação pública e verificável: sem avaliações, sem preço e sem credenciais não confirmadas.
+ */
 import { faqs } from '../../src/content.ts';
 import { site, whatsappUrl } from '../../src/site.config.ts';
 import { abs, image } from './html.ts';
@@ -32,35 +35,39 @@ export function website(): object {
     '@id': ID.website,
     url: `${site.url}/`,
     name: site.name,
-    description: 'Assessoria de investimentos para alta renda com Rafaela Alves, na EQI Investimentos.',
+    description: 'Assessoria de investimentos para alta renda com Rafaela Alves, assessora de investimentos vinculada à EQI.',
     inLanguage: site.locale,
     publisher: { '@id': ID.person },
   };
 }
 
 export function person(): object {
+  const previous = site.person.career.slice(0, -1);
   return {
     '@type': 'Person',
     '@id': ID.person,
     name: site.person.name,
     url: `${site.url}/`,
     jobTitle: site.person.jobTitle,
-    description:
-      'Assessora de investimentos na EQI Investimentos, com passagens por Santander Select e XP Investimentos, certificações Ancord, CEA e CPA-20 e mais de R$ 500 milhões gerenciados ao longo da carreira.',
-    image: imageObject(PORTRAIT, 'Rafaela Alves, assessora de investimentos na EQI Investimentos'),
+    description: `Assessora de investimentos vinculada à EQI Investimentos, com passagens por ${previous.join(' e ')}.`,
+    image: imageObject(PORTRAIT, 'Rafaela Alves, assessora de investimentos vinculada à EQI'),
     telephone: site.whatsapp.tel,
     knowsLanguage: 'pt-BR',
     worksFor: { '@type': 'Organization', '@id': ID.employer, name: site.person.employer.name, url: site.person.employer.url },
-    hasCredential: site.person.credentials.map((c) => ({
-      '@type': 'EducationalOccupationalCredential',
-      name: c.name,
-      credentialCategory: 'Certificação profissional',
-      recognizedBy: { '@type': 'Organization', name: c.issuer },
-    })),
+    // Credenciais só entram depois de confirmadas (ver site.person.credentialsConfirmed).
+    ...(site.person.credentialsConfirmed
+      ? {
+          hasCredential: site.person.credentials.map((c) => ({
+            '@type': 'EducationalOccupationalCredential',
+            name: c.name,
+            credentialCategory: 'Certificação profissional',
+            recognizedBy: { '@type': 'Organization', name: c.issuer },
+          })),
+        }
+      : {}),
     knowsAbout: [
       'Assessoria de investimentos',
       'Investimentos para alta renda',
-      'Gestão patrimonial',
       'Fundos de investimento',
       'Fundos de Investimento Imobiliário (FII)',
       'Renda fixa',
@@ -78,16 +85,10 @@ export function service(): object {
     name: 'Assessoria de investimentos para alta renda',
     serviceType: 'Assessoria de investimentos',
     description:
-      'Assessoria de investimentos personalizada para pessoa física e empresas: estratégias sob medida, acesso a oportunidades exclusivas, relatórios transparentes e aconselhamento contínuo.',
+      'Assessoria de investimentos para pessoa física e empresas: entender a carteira atual, avaliar alternativas no Brasil e no exterior e acompanhar as decisões ao longo do tempo. Voltada a quem tem a partir de R$ 300 mil para investir.',
     provider: { '@id': ID.person },
     areaServed: { '@type': 'Country', name: 'Brasil' },
     audience: { '@type': 'Audience', audienceType: 'Investidores de alta renda (pessoa física e empresas)' },
-    offers: {
-      '@type': 'Offer',
-      price: '0',
-      priceCurrency: 'BRL',
-      description: 'Assessoria gratuita para clientes com investimentos a partir de R$ 300.000,00',
-    },
     availableChannel: {
       '@type': 'ServiceChannel',
       name: 'WhatsApp',

@@ -48,6 +48,27 @@ interface Job {
 
 const HOME: Job[] = [
   { name: 'rafaela-alves-assessora-de-investimentos', src: 'IMG_8916.webp', dir: '', widths: [420, 640, 832], fallback: 'webp', avifQuality: 58 },
+  // Recortes do mesmo retrato para a primeira dobra (direção de arte por largura de tela):
+  //  - desktop: 4:5, da cabeça à cintura;  - mobile: vertical, do busto para cima, com respiro acima da cabeça.
+  {
+    name: 'rafaela-alves-retrato-desktop',
+    src: 'IMG_8916.webp',
+    dir: '',
+    widths: [480, 640, 832],
+    fallback: 'webp',
+    avifQuality: 60,
+    extract: { left: 0, top: 0, width: 832, height: 1040 },
+  },
+  {
+    name: 'rafaela-alves-retrato-mobile',
+    src: 'IMG_8916.webp',
+    dir: '',
+    widths: [180, 270, 360, 528],
+    fallback: 'webp',
+    fallbackWidths: [360],
+    avifQuality: 62,
+    extract: { left: 106, top: 6, width: 528, height: 930 },
+  },
   { name: 'rafaela-alves-eqi-investimentos', src: 'IMG_3491.webp', dir: '', widths: [420, 640, 832], fallback: 'webp', avifQuality: 58 },
   { name: 'rafaela-alves-evento-mercado-financeiro', src: 'Camada-0-1-2.png', dir: '', widths: [280, 440, 640], fallback: 'webp', avifQuality: 55 },
   { name: 'logo-rafaela-alves-assessora-de-investimento-eqi', src: 'LOGO-RA-ASSESSORA-DE-INVESTIMENTO-EQI.png', dir: '', widths: [280, 560, 840], fallback: 'webp', avifQuality: 70 },

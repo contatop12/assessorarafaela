@@ -36,21 +36,30 @@ const crumbs = (items: Array<{ href?: string; label: string }>): string =>
     .map((c) => (c.href ? `<li><a href="${c.href}">${esc(c.label)}</a></li>` : `<li aria-current="page">${esc(c.label)}</li>`))
     .join('')}</ol></nav>`;
 
-export function postCard(post: Post, cats: Map<string, Category>, opts: { eager?: boolean; heading?: 'h2' | 'h3' } = {}): string {
+export interface PostCardOptions {
+  eager?: boolean;
+  heading?: 'h2' | 'h3';
+  /** Tema exibido no lugar da categoria (home: a categoria importada nem sempre corresponde ao artigo). */
+  topic?: string;
+  /** Chamada exibida no lugar do resumo do artigo (home: chamadas revisadas). */
+  excerpt?: string;
+}
+
+export function postCard(post: Post, cats: Map<string, Category>, opts: PostCardOptions = {}): string {
   const h = opts.heading ?? 'h2';
-  const cat = cats.get(post.categories[0] ?? '');
+  const label = opts.topic ?? cats.get(post.categories[0] ?? '')?.name;
   const img = picture(post.image, {
     alt: '',
     sizes: '(min-width: 62em) 370px, (min-width: 40em) 46vw, 92vw',
     maxWidth: 800,
     eager: opts.eager,
   });
-  return `<article class="card" data-reveal>
+  return `<article class="card">
   <a class="card__media" href="/${post.slug}/" tabindex="-1" aria-hidden="true">${img}</a>
   <div class="card__body">
-    ${cat ? `<p class="card__cat">${esc(cat.name)}</p>` : ''}
+    ${label ? `<p class="card__cat">${esc(label)}</p>` : ''}
     <${h} class="card__title"><a href="/${post.slug}/">${esc(post.title)}</a></${h}>
-    <p class="card__text">${esc(post.excerpt)}</p>
+    <p class="card__text">${esc(opts.excerpt ?? post.excerpt)}</p>
     <p class="card__meta"><time datetime="${post.date}">${formatDate(post.date)}</time><span>${post.minutes} min de leitura</span></p>
   </div>
 </article>`;
@@ -120,16 +129,24 @@ ${ctaBand(o.icons)}`;
 
 export function ctaBand(icons: Icons): string {
   return `<section class="cta-band theme-dark">
-  <div class="container cta-band__inner" data-reveal>
+  <div class="container cta-band__inner">
     <div>
-      <h2 class="cta-band__title">Quer uma estratégia feita para o seu patrimônio?</h2>
-      <p>Assessoria gratuita para clientes com investimentos a partir de R$ 300.000,00.</p>
+      <h2 class="cta-band__title">Seu patrimônio merece uma estratégia à altura.</h2>
+      <p>${esc(site.minimum)}</p>
     </div>
     <a class="btn btn--gold" href="${esc(whatsappUrl('Olá, Rafaela! Li um artigo no seu blog e gostaria de conversar sobre os meus investimentos.'))}" target="_blank" rel="noopener noreferrer" data-wa="blog-cta">
-      ${icons.use('whatsapp')}<span>Falar com a Rafaela no WhatsApp</span>
+      ${icons.use('whatsapp')}<span>Falar com a Rafaela</span>
     </a>
   </div>
 </section>`;
+}
+
+/** Minibiografia da autora nos artigos. As certificações só entram depois de confirmadas. */
+function authorBio(): string {
+  const { employer, career, credentials, credentialsConfirmed } = site.person;
+  const bio = `Assessora de investimentos vinculada à ${employer.name}, com passagens por ${career.slice(0, -1).join(' e ')}.`;
+  if (!credentialsConfirmed) return bio;
+  return `${bio} Certificações: ${new Intl.ListFormat('pt-BR', { type: 'conjunction' }).format(credentials.map((c) => c.name))}.`;
 }
 
 export function postPage(post: Post, related: Post[], cats: Map<string, Category>, icons: Icons): string {
@@ -169,11 +186,11 @@ ${post.html}
       </div>
       <p class="post__disclaimer">Este conteúdo tem caráter informativo e não constitui recomendação de investimento. Investimentos envolvem riscos; avalie o seu perfil antes de decidir.</p>
       <aside class="author">
-        ${picture('rafaela-alves-eqi-investimentos', { alt: 'Rafaela Alves, assessora de investimentos na EQI', sizes: '96px', maxWidth: 420, class: 'author__photo' })}
+        ${picture('rafaela-alves-eqi-investimentos', { alt: 'Rafaela Alves, assessora de investimentos vinculada à EQI', sizes: '96px', maxWidth: 420, class: 'author__photo' })}
         <div>
           <p class="author__name">${esc(site.person.name)}</p>
-          <p>Assessora de investimentos na EQI, com certificações Ancord, CEA e CPA-20 e mais de R$ 500 milhões gerenciados ao longo da carreira.</p>
-          <a class="textlink" href="/#sobre">Conheça a minha trajetória ${icons.use('arrow-right')}</a>
+          <p>${esc(authorBio())}</p>
+          <a class="textlink" href="/#sobre">Conheça a trajetória da Rafaela ${icons.use('arrow-right')}</a>
         </div>
       </aside>
     </div>
@@ -214,9 +231,9 @@ export function thanksPage(icons: Icons): string {
   return `<section class="page-hero theme-dark notfound">
   <div class="container container--narrow">
     <h1 class="page-hero__title">Obrigada pelo contato</h1>
-    <p class="page-hero__lead">Com o envio do formulário concluído, retornarei o mais breve possível. Para falar comigo agora, é só chamar no WhatsApp.</p>
+    <p class="page-hero__lead">Recebemos o seu contato e retornaremos pelo WhatsApp. Se quiser adiantar a conversa, envie uma mensagem agora.</p>
     <p class="notfound__actions">
-      <a class="btn btn--gold" href="${esc(whatsappUrl('Olá, Rafaela! Acabei de preencher o formulário do site.'))}" target="_blank" rel="noopener noreferrer" data-wa="obrigado">${icons.use('whatsapp')}<span>Falar no WhatsApp</span></a>
+      <a class="btn btn--gold" href="${esc(whatsappUrl('Olá, Rafaela! Acabei de enviar meus dados pelo formulário do site.'))}" target="_blank" rel="noopener noreferrer" data-wa="obrigado">${icons.use('whatsapp')}<span>Falar com a Rafaela</span></a>
       <a class="btn btn--outline" href="/">Voltar para a página inicial</a>
     </p>
   </div>

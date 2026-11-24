@@ -23,18 +23,23 @@ const TEXT = `${range(0x20, 0x7e)}${range(0xa0, 0xff)}–—‘’“”…•�
 interface FontJob {
   out: string;
   src: string;
+  /** Fonte de sistema usada como fallback (define as métricas impressas para o `@font-face` de fallback). */
+  fallback: 'Georgia' | 'Arial';
   axes?: Record<string, { min: number; max: number } | number>;
 }
 
 const JOBS: FontJob[] = [
+  // Títulos: Playfair Display (variável, 400–700). Substituiu a Bodoni Moda, cujos traços finos
+  // ficavam apagados nos títulos médios (cards, perguntas, etapas).
   {
-    out: 'bodoni-moda.woff2',
-    src: '@fontsource-variable/bodoni-moda/files/bodoni-moda-latin-opsz-normal.woff2',
-    axes: { wght: { min: 400, max: 700 }, opsz: { min: 6, max: 96 } },
+    out: 'playfair-display.woff2',
+    src: '@fontsource-variable/playfair-display/files/playfair-display-latin-wght-normal.woff2',
+    fallback: 'Georgia',
+    axes: { wght: { min: 400, max: 700 } },
   },
-  { out: 'poppins-400.woff2', src: '@fontsource/poppins/files/poppins-latin-400-normal.woff2' },
-  { out: 'poppins-500.woff2', src: '@fontsource/poppins/files/poppins-latin-500-normal.woff2' },
-  { out: 'poppins-600.woff2', src: '@fontsource/poppins/files/poppins-latin-600-normal.woff2' },
+  { out: 'poppins-400.woff2', src: '@fontsource/poppins/files/poppins-latin-400-normal.woff2', fallback: 'Arial' },
+  { out: 'poppins-500.woff2', src: '@fontsource/poppins/files/poppins-latin-500-normal.woff2', fallback: 'Arial' },
+  { out: 'poppins-600.woff2', src: '@fontsource/poppins/files/poppins-latin-600-normal.woff2', fallback: 'Arial' },
 ];
 
 /** Largura média ponderada pela frequência de letras — mesma ideia do `size-adjust` do fontaine/capsize. */
@@ -65,7 +70,7 @@ async function main(): Promise<void> {
     });
     await writeFile(path.join(OUT, job.out), output);
     const m = metrics(output);
-    const fallback = job.out.startsWith('bodoni') ? 'Georgia' : 'Arial';
+    const fallback = job.fallback;
     const sizeAdjust = m.avg / FALLBACK_AVG[fallback];
     const pct = (n: number): string => `${(n * 100).toFixed(2)}%`;
     console.log(

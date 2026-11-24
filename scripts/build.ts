@@ -14,7 +14,7 @@ import path from 'node:path';
 import { build as esbuild } from 'esbuild';
 import { minify } from 'html-minifier-terser';
 import { transform } from 'lightningcss';
-import { eqi, faqs, offers, reasons, stats, testimonials } from '../src/content.ts';
+import { eqiRole, faqs, homePosts, stats, steps, testimonials } from '../src/content.ts';
 import { site, whatsappUrl } from '../src/site.config.ts';
 import { abs, esc, expand, Icons, picture, preloadImage, ROOT, setManifest, image, type Manifest } from './lib/html.ts';
 import * as schema from './lib/schema.ts';
@@ -34,6 +34,9 @@ import { homeVars } from './templates/home.ts';
 import { layout, type PageMeta, type Shell } from './templates/layout.ts';
 
 const DIST = path.join(ROOT, 'dist');
+/** Recortes do retrato usados na primeira dobra da home (os mesmos nomes do <x-img> em src/pages/home.html). */
+const HERO_MOBILE = 'rafaela-alves-retrato-mobile';
+const HERO_DESKTOP = 'rafaela-alves-retrato-desktop';
 const now = new Date();
 const BUILD_DATE = now.toISOString();
 const YEAR = Number(new Intl.DateTimeFormat('en', { year: 'numeric', timeZone: 'America/Sao_Paulo' }).format(now));
@@ -180,19 +183,30 @@ async function main(): Promise<void> {
   /* ---- home ---- */
   {
     const shell = shellFor();
-    const latest = posts.slice(0, 3).map((p) => postCard(p, cats, { heading: 'h3' })).join('\n');
+    // Artigos em destaque: lista curada em src/content.ts, com tema e chamada revisados (as URLs não mudam).
+    const featured = homePosts
+      .map((h) => {
+        const post = posts.find((p) => p.slug === h.slug);
+        if (!post) throw new Error(`homePosts: artigo inexistente em content/posts: ${h.slug}`);
+        return postCard(post, cats, { heading: 'h3', topic: h.topic, excerpt: h.teaser });
+      })
+      .join('\n');
     const source = (await readFile(path.join(ROOT, 'src/pages/home.html'), 'utf8')).replace(/<!--[\s\S]*?-->/g, '');
-    const main = expand(source, { icons: shell.icons, vars: homeVars(shell.icons, latest) });
-    const title = 'Assessoria de Investimentos Alta Renda | Rafaela Alves – EQI';
+    const main = expand(source, { icons: shell.icons, vars: homeVars(shell.icons, featured) });
+    const title = 'Rafaela Alves | Assessoria de Investimentos para Alta Renda';
     const description =
-      'Assessora de investimentos na EQI, com mais de R$ 500 milhões gerenciados. Estratégia sob medida para alta renda e assessoria gratuita a partir de R$ 300 mil.';
+      'Conheça a assessoria de investimentos de Rafaela Alves, vinculada à EQI. Acompanhamento de carteira para quem tem a partir de R$ 300 mil para investir.';
     const meta: PageMeta = {
       path: '/',
       title,
       description,
       css: homeCss,
       script: scripts.home,
-      preloads: [preloadImage('rafaela-alves-assessora-de-investimentos', '(min-width: 62em) 440px, (min-width: 40em) 52vw, 82vw')],
+      // O retrato é o maior elemento da primeira dobra (LCP): cada faixa de tela pré-carrega só o seu recorte.
+      preloads: [
+        preloadImage(HERO_MOBILE, '(min-width: 40em) 15rem, 40vw', '(max-width: 61.99em)'),
+        preloadImage(HERO_DESKTOP, '(min-width: 75em) 460px, 38vw', '(min-width: 62em)'),
+      ],
       graph: [
         schema.website(),
         schema.webPage({ path: '/', title, description, type: 'ProfilePage', modified: BUILD_DATE, about: true }),
@@ -332,13 +346,13 @@ async function main(): Promise<void> {
     'politica-de-privacidade':
       'Política de Privacidade do site de Rafaela Alves, assessora de investimentos: como os seus dados pessoais são coletados, usados e protegidos, conforme a LGPD.',
     'termos-de-uso-assessora-rafaela-alves':
-      'Termos de Uso do site de Rafaela Alves, assessora de investimentos na EQI: condições de acesso, propriedade intelectual, links externos e lei aplicável.',
+      'Termos de Uso do site de Rafaela Alves, assessora de investimentos vinculada à EQI: condições de acesso, propriedade intelectual, links externos e lei aplicável.',
   };
   for (const page of legal) {
     const shell = shellFor();
     const pagePath = `/${page.slug}/`;
     const title = `${page.title} | Rafaela Alves – Assessora de Investimentos`;
-    const description = legalDescriptions[page.slug] ?? `${page.title} do site de Rafaela Alves, assessora de investimentos na EQI.`;
+    const description = legalDescriptions[page.slug] ?? `${page.title} do site de Rafaela Alves, assessora de investimentos vinculada à EQI.`;
     await writePage(
       pagePath,
       layout(
@@ -463,8 +477,8 @@ Sitemap: ${site.url}/sitemap.xml
 
   /* ---- llms.txt / llms-full.txt ---- */
   const byCat = categories.map((c) => ({ c, items: posts.filter((p) => p.categories[0] === c.slug) }));
-  const summary =
-    'Rafaela Alves é assessora de investimentos na EQI Investimentos, com certificações Ancord, CEA e CPA-20, passagens por Santander Select e XP Investimentos e mais de R$ 500 milhões gerenciados ao longo da carreira. Atende investidores de alta renda — pessoa física e empresas — em todo o Brasil, com assessoria gratuita para clientes com investimentos a partir de R$ 300.000,00.';
+  const numbers = stats.map((s) => `${s.value.replace(/ /g, ' ')} (${s.label.toLowerCase()})`).join('; ');
+  const summary = `Rafaela Alves é assessora de investimentos vinculada à EQI Investimentos, com passagens por Santander Select e XP Investimentos. Atende investidores de alta renda — pessoa física e empresas — em todo o Brasil. A assessoria é voltada a quem tem a partir de R$ 300 mil para investir.`;
   const llmsHead = `# ${site.name}
 
 > ${summary}
@@ -472,19 +486,20 @@ Sitemap: ${site.url}/sitemap.xml
 - Site: ${site.url}/
 - Contato: WhatsApp ${site.whatsapp.display} (${whatsappUrl()})
 - Idioma: português (Brasil)
-- Atuação: assessoria de investimentos para alta renda; atendimento em todo o Brasil, com soluções para o mercado local e internacional
-- Instituição: EQI Investimentos (${site.person.employer.url}), que tem o BTG Pactual como parceiro estratégico e custodiante
+- Atuação: assessoria de investimentos para alta renda; atendimento em todo o Brasil
+- Instituição: assessora de investimentos vinculada à EQI Investimentos (${site.person.employer.url})
 
-Os artigos do blog têm caráter informativo e não constituem recomendação de investimento.
+As informações do site têm caráter informativo e não constituem oferta, recomendação ou garantia de rentabilidade.
 `;
   await writeText(
     'llms.txt',
     `${llmsHead}
 ## Páginas principais
 
-- [Página inicial](${site.url}/): apresentação, serviços, diferenciais da EQI, depoimentos, perguntas frequentes e contato
-- [Sobre Rafaela Alves](${site.url}/#sobre): trajetória, certificações e forma de atuação
-- [Perguntas frequentes](${site.url}/#faq): como funciona a assessoria, custos, abertura de conta e quem é atendido
+- [Página inicial](${site.url}/): apresentação, trajetória em números, como funciona a assessoria, vínculo com a EQI, depoimentos, perguntas frequentes e contato
+- [Como funciona a assessoria de investimentos](${site.url}/#assessoria): as três etapas do atendimento
+- [Sobre Rafaela Alves](${site.url}/#sobre): trajetória profissional e forma de atuação
+- [Perguntas frequentes](${site.url}/#faq): para quem é a assessoria, primeira conversa, remuneração e regiões atendidas
 - [Contato](${site.url}/#contato): formulário e WhatsApp
 - [Blog](${site.url}/blog/): ${posts.length} artigos sobre investimentos
 - [Conteúdo completo para LLMs](${site.url}/llms-full.txt): textos da página inicial e resumo de todos os artigos
@@ -515,31 +530,27 @@ ${g.items
     `${llmsHead}
 ## Sobre Rafaela Alves
 
-Com uma trajetória consolidada no atendimento a clientes de alta renda, Rafaela Alves acumula passagens por instituições como Santander Select e XP Investimentos. Atualmente na EQI Investimentos, traz a experiência de ter gerenciado mais de R$ 500 milhões ao longo da carreira, atendendo investidores em todo o Brasil com soluções para o mercado local e internacional. Sua missão é ser a parceira estratégica de clientes que buscam mais do que rentabilidade: uma orientação personalizada, técnica e focada na preservação e no crescimento de patrimônio.
+Rafaela Alves é assessora de investimentos vinculada à EQI Investimentos e atende investidores de alta renda em todo o Brasil. Antes da EQI, construiu a carreira no Santander Select e na XP Investimentos. Ajuda investidores a entender a própria carteira, avaliar alternativas no Brasil e no exterior e acompanhar os investimentos de perto.
 
-Ao contrário do ambiente bancário tradicional, onde metas muitas vezes ofuscam a qualidade do atendimento, Rafaela atua com liberdade nas recomendações e atende uma carteira mais seleta, o que permite atenção personalizada e respostas rápidas.
+Trajetória em números (histórico de carreira): ${numbers}.
 
-Números: ${stats.map((s) => `${s.prefix}${s.value}${s.suffix} ${s.label.toLowerCase()}`).join('; ')}.
+## Como funciona a assessoria de investimentos
 
-## Por que escolher a assessoria
+${steps.map((s, i) => `${i + 1}. **${s.title}.** ${s.text}`).join('\n')}
 
-${list(reasons)}
+Quem já investe por um banco ou por uma corretora pode começar a conversa pela carteira que já tem.
 
-## O que a assessoria oferece
+## Assessoria de investimentos vinculada à EQI
 
-${list(offers)}
-
-## Por que investir com a EQI Investimentos
-
-A EQI Investimentos não é apenas uma corretora, mas uma das maiores casas de assessoria do Brasil, com a solidez de ter o BTG Pactual — o maior banco de investimentos da América Latina — como parceiro estratégico e custodiante.
-
-${list(eqi)}
+${list(eqiRole)}
 
 ## Perguntas frequentes
 
 ${faqs.map((f) => `### ${f.q}\n\n${f.a}`).join('\n\n')}
 
 ## Depoimentos de clientes
+
+Relatos sobre atendimento, clareza e acompanhamento; não representam promessa nem garantia de resultados.
 
 ${testimonials.map((t) => `- “${t.text}” — ${t.name}`).join('\n')}
 
@@ -633,7 +644,7 @@ ${posts
 
 # Early Hints: o navegador começa a baixar as fontes críticas antes do HTML chegar.
 /
-  Link: </fonts/bodoni-moda.woff2>; rel=preload; as=font; type=font/woff2; crossorigin
+  Link: </fonts/playfair-display.woff2>; rel=preload; as=font; type=font/woff2; crossorigin
   Link: </fonts/poppins-400.woff2>; rel=preload; as=font; type=font/woff2; crossorigin
 
 # URLs de teste (*.workers.dev) não devem ser indexadas — só o domínio oficial.
@@ -667,7 +678,7 @@ https://:version.:subdomain.workers.dev/*
 `,
   );
 
-  if (!image('rafaela-alves-assessora-de-investimentos')) console.warn('  ! imagem do hero ausente no manifesto');
+  for (const name of [HERO_MOBILE, HERO_DESKTOP]) if (!image(name)) console.warn(`  ! recorte do retrato ausente no manifesto: ${name}`);
   const ms = Math.round(performance.now() - t0);
   console.log(`build ok — ${written.length} páginas em ${ms} ms → dist/`);
 }

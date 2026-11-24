@@ -3,7 +3,7 @@
 Site de [assessorarafaela.com.br](https://assessorarafaela.com.br) reconstruído em **HTML + CSS + TypeScript**, estático, servido por **Cloudflare Workers** (Static Assets). Substitui o WordPress/Elementor original mantendo as mesmas URLs.
 
 - 112 páginas geradas no build: home, blog (90 artigos, paginação e 3 categorias), Política de Privacidade, Termos de Uso, confirmação do formulário e 404.
-- Sem framework e sem dependências em produção: o navegador recebe HTML com CSS embutido, um arquivo JS (~5 KB nas páginas internas, ~16 KB na home) e imagens AVIF.
+- Sem framework e sem dependências em produção: o navegador recebe HTML com CSS embutido, um arquivo JS (~6 KB nas páginas internas, ~10 KB na home) e imagens AVIF.
 - Um Worker mínimo cuida só do formulário de contato (`POST /api/lead`).
 
 ## Comandos
@@ -52,12 +52,17 @@ Payload enviado ao webhook:
 
 ```json
 {
-  "nome": "…", "email": "…", "whatsapp": "+5511…",
-  "valor": "Acima de 1 milhão", "objetivo": "Proteção financeira",
+  "nome": "…", "email": "", "whatsapp": "+5511…",
+  "valor": "De R$ 500 mil a menos de R$ 1 milhão", "objetivo": "Revisar minha carteira",
+  "qualificado": true,
   "origem": { "utm_source": "…", "utm_campaign": "…", "gclid": "…" },
   "pagina": "https://assessorarafaela.com.br/", "recebidoEm": "2026-…Z", "pais": "BR", "site": "assessorarafaela.com.br"
 }
 ```
+
+- `valor` e `objetivo` trazem exatamente o texto da opção escolhida (lista em `formOptions`, `src/content.ts`). **Ao mudar as opções, ajuste os mapeamentos do n8n/CRM.**
+- `qualificado` é `true` quando a faixa informada atinge o mínimo de atendimento (R$ 300 mil). Quem marca "Abaixo de R$ 300 mil" é capturado do mesmo jeito, com `qualificado: false`.
+- `email` é opcional no formulário e chega como `""` quando não informado. Se o CRM exigir e-mail, mude `leadForm.emailRequired` para `true` em `src/site.config.ts`.
 
 **Sem webhook configurado nenhum lead é perdido:** o site mostra "Falta só um passo" e leva o visitante ao WhatsApp com todos os dados já preenchidos na mensagem. O mesmo acontece se o webhook estiver fora do ar.
 
@@ -73,7 +78,8 @@ Para testar localmente, copie `.dev.vars.example` para `.dev.vars`.
 | --- | --- |
 | WhatsApp, GTM, URL do site, redes sociais (`sameAs`), modo de cookies | `src/site.config.ts` |
 | Textos da home (seções) | `src/pages/home.html` |
-| FAQ, depoimentos, números, cards de serviços/EQI, opções do formulário | `src/content.ts` (alimenta o HTML **e** o schema.org) |
+| Números da trajetória, etapas da assessoria, papel da EQI, depoimentos, FAQ, opções do formulário, artigos em destaque | `src/content.ts` (alimenta o HTML, o schema.org, o `llms.txt` **e** a validação do Worker) |
+| Critério de atendimento ("a partir de R$ 300 mil"), e-mail obrigatório ou não, selos de certificação (`credentialsConfirmed`) | `src/site.config.ts` |
 | Artigos do blog | `content/posts/<slug>.html` (cabeçalho JSON em comentário + HTML) |
 | Política de Privacidade / Termos de Uso | `content/pages/*.html` |
 | Estilos | `src/styles/base.css` (tokens e componentes), `home.css`, `blog.css` |
@@ -85,7 +91,13 @@ Para testar localmente, copie `.dev.vars.example` para `.dev.vars`.
 
 **Nova imagem:** coloque o original em `assets-src/home/`, registre em `HOME` no `scripts/optimize-images.ts`, rode `npm run images` e use no HTML com `<x-img name="…" alt="…" sizes="…">`.
 
-**Imagem de compartilhamento (OG):** `public/og-rafaela-alves.jpg` (1200×630). O layout está em `scripts/og-template.html` — copie para `dist/`, abra no navegador em 1200×630 e capture a tela.
+**Retrato da primeira dobra:** dois recortes da mesma foto (`rafaela-alves-retrato-mobile` e `rafaela-alves-retrato-desktop`), definidos em `HOME` no `scripts/optimize-images.ts` (campo `extract`). Para trocar a foto ou o enquadramento, ajuste ali, apague os arquivos antigos em `public/img/` e rode `npm run images`.
+
+**Imagem de compartilhamento (OG):** `public/og-rafaela-alves.jpg` (1200×630), com o recorte do retrato. O layout está em `scripts/og-template.html` — copie para `dist/`, abra no navegador em 1200×630 e capture a tela.
+
+**Artigos em destaque na home:** lista `homePosts` em `src/content.ts` (slug + tema + chamada revisada). As chamadas da home descrevem o conteúdo, sem insinuar ganho.
+
+**Selos de certificação:** ficam ocultos enquanto `person.credentialsConfirmed` for `false` em `src/site.config.ts` (as certificações aparecem só como texto). Depois de confirmar a situação de cada uma, mude para `true`: os selos voltam à seção "Sobre" e as credenciais entram no schema.org e nos artigos.
 
 ## Estrutura
 
@@ -106,19 +118,21 @@ wrangler.jsonc        configuração da Cloudflare
 
 ## Performance
 
-- **Imagens:** AVIF em 2–3 larguras com `srcset`/`sizes`, fallback WebP/JPEG, `width`/`height` (sem layout shift), `lazy` fora da primeira dobra; a foto do hero tem `preload` + `fetchpriority="high"`.
-- **Fontes:** Bodoni Moda (variável) e Poppins self-hosted em WOFF2, recortadas para o português (~60 KB no total), com `preload`, `font-display: swap` e fallbacks de métricas ajustadas.
+- **Imagens:** AVIF em 2–3 larguras com `srcset`/`sizes`, fallback WebP/JPEG, `width`/`height` (sem layout shift), `lazy` fora da primeira dobra; o retrato da primeira dobra (elemento de LCP) tem recortes próprios para celular e desktop, `preload` por faixa de tela e `fetchpriority="high"`.
+- **Fontes:** Playfair Display (variável, títulos) e Poppins (textos) self-hosted em WOFF2, recortadas para o português (~60 KB no total), com `preload`, `font-display: swap` e fallbacks de métricas ajustadas.
 - **CSS/JS:** CSS minificado embutido no HTML (nenhuma requisição bloqueante); JS em módulo com hash e cache imutável de 1 ano.
 - **Pré-carregamento:** Speculation Rules (prefetch/prerender ao passar o mouse nos links internos), com prefetch em JS para Safari/Firefox; Early Hints para as fontes.
 - **GTM:** carrega na primeira interação ou quando o navegador fica ocioso — não disputa o carregamento da página. Não carrega em `localhost` nem em `*.workers.dev`.
-- **Movimento:** todas as animações respeitam `prefers-reduced-motion`.
+- **Movimento:** nenhum texto ou botão depende de animação para aparecer; as transições que restam (menu, acordeão, CTA fixo) respeitam `prefers-reduced-motion`.
+- **Metas (dados de campo):** LCP até 2,5 s, INP até 200 ms e CLS até 0,1. Medições feitas no navegador de desenvolvimento são de laboratório — confira o campo no CrUX/Search Console depois da publicação.
 
 ## SEO, GEO e AEO
 
 - `title`, `description`, canonical, Open Graph e Twitter Card únicos por página; um único `<h1>` por página.
-- **Schema.org (JSON-LD):** `WebSite`, `ProfilePage`, `Person` (cargo, empregador, certificações), `Service`, `FAQPage`, `BlogPosting`, `BreadcrumbList`, `CollectionPage`/`ItemList` — sempre espelhando o texto visível.
+- **Schema.org (JSON-LD):** `WebSite`, `ProfilePage`, `Person` (cargo, empregador; certificações só depois de confirmadas), `Service` (sem preço), `FAQPage`, `BlogPosting`, `BreadcrumbList`, `CollectionPage`/`ItemList` — sempre espelhando o texto visível.
 - **Arquivos gerados no build:** `sitemap.xml` (com imagens), `robots.txt` (buscadores e bots de IA liberados, `/api/` bloqueado), `llms.txt`, `llms-full.txt`, `feed.xml`, `site.webmanifest`.
-- **Respostas diretas:** FAQ visível com 8 perguntas, ficha de fatos na seção "Sobre" e sumário nos artigos.
+- **Respostas diretas:** FAQ visível com 5 perguntas, ficha de fatos na seção "Sobre" e sumário nos artigos.
+- **Regra editorial da home:** só afirmações comprováveis. `npm run check` falha se voltarem termos como "sob minha custódia", "assessoria gratuita", "resultados comprovados" ou "custo zero".
 - **Migração sem perda:** todas as URLs do WordPress foram mantidas; `/home/`, `/tag/*`, `/author/*`, feeds e sitemaps antigos redirecionam com 301.
 - URLs de teste (`*.workers.dev`) respondem com `X-Robots-Tag: noindex`.
 
@@ -128,12 +142,23 @@ O GTM (`GTM-KQ7WPWS6`, o mesmo do site antigo) recebe estes eventos no `dataLaye
 
 | Evento | Quando | Parâmetros |
 | --- | --- | --- |
-| `whatsapp_click` | clique em qualquer link do WhatsApp | `link_location` (hero, cabecalho, flutuante, faq…), `page_path` |
+| `whatsapp_click` | clique em qualquer link do WhatsApp | `link_location`, `page_path` |
+| `form_cta_click` | clique em link que leva ao formulário ("Prefiro deixar meu contato") | `link_location`, `page_path` |
 | `form_start` | primeiro foco no formulário | `form_name` |
-| `generate_lead` | formulário enviado | `form_name`, `valor_acumulado`, `objetivo`, `lead_forwarded` |
+| `generate_lead` | envio **confirmado pelo backend** (um por lead) | `form_name`, `objetivo`, `lead_forwarded` |
 | `form_error` | falha no envio | `form_name` |
 
-Os acionadores do GTM que dependiam do formulário do Elementor precisam apontar para `generate_lead`.
+`link_location` identifica a posição do CTA: `hero`, `assessoria` (depois das três etapas), `sobre`, `eqi`, `faq`, `contato`, `formulario` (tela de confirmação), `flutuante` (CTA fixo), `cabecalho`, `menu`, `rodape`, `blog-cta`, `obrigado`.
+
+São três sinais diferentes, que não devem ser somados na mesma conversão:
+
+1. **Clique no WhatsApp** — `whatsapp_click` (intenção; não garante conversa).
+2. **Envio confirmado de formulário** — `generate_lead`.
+3. **Lead qualificado** — existe só no CRM: o webhook recebe `qualificado` e a faixa informada, e a conversão deve ser importada de lá (conversão offline), não disparada pelo navegador.
+
+Nome, telefone, e-mail e faixa patrimonial nunca vão para o `dataLayer`. Toques repetidos no mesmo botão em menos de 1 s contam uma vez. As UTMs (`utm_*`, `gclid`, `fbclid`) da visita seguem com o lead no campo `origem`.
+
+Os acionadores do GTM que dependiam do formulário do Elementor precisam apontar para `generate_lead`. O parâmetro `valor_acumulado` deixou de ser enviado (faixa patrimonial fica fora do analytics).
 
 **Cookies:** `consentMode` em `src/site.config.ts` — `opt-out` (padrão, igual ao site antigo: rastreia até o visitante recusar) ou `opt-in` (só rastreia depois do "Aceitar"). O Consent Mode v2 do Google é sinalizado nos dois casos.
 
